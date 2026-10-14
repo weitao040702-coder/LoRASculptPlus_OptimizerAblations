@@ -1,5 +1,7 @@
 # Large or machine-local assets
 .cache/
+.hf-upload-stage/
+logs/hf-assets-upload.out
 .conda
 assets
 checkpoints/
