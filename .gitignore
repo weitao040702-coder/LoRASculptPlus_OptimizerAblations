@@ -1,0 +1,30 @@
+# Large or machine-local assets
+.cache/
+.conda
+assets
+checkpoints/
+logs/
+progress/
+images/
+
+# Python build/runtime files
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+.pytest_cache/
+
+# Local experiment outputs
+results/
+results.csv
+results.md
+run_manifest.json
+*.out
+*.err
+*.gpu.csv
+
+# Secrets and editor files
+.env
+.DS_Store
+.vscode/
+.idea/
