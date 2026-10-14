@@ -1,0 +1,18 @@
+method=Muon
+rank=32
+checkpoint=/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/checkpoints/Muon-r32
+gpu=1
+start=2026-10-08T08:33:21-04:00
+protocol=OKVQA 5046; OCRVQA deterministic 5000; GQA testdev-balanced; TextVQA 5000
+
+Samples: 5046
+Accuracy on OKVQA: 55.47%
+
+Samples: 5000
+Accuracy on OCRVQA: 63.34%
+GQA protocol: testdev-balanced accuracy only (scene-graph evaluator unavailable)
+GQA Accuracy: 58.68%
+
+Samples: 5000
+Accuracy on TextVQA: 53.71%
+end=2026-10-08T09:27:56-04:00

@@ -1,0 +1,18 @@
+method=ABManifold
+rank=16
+checkpoint=/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/checkpoints/ABManifold-r16
+gpu=0
+start=2026-10-08T01:13:04-04:00
+protocol=OKVQA 5046; OCRVQA deterministic 5000; GQA testdev-balanced; TextVQA 5000
+
+Samples: 5046
+Accuracy on OKVQA: 57.92%
+
+Samples: 5000
+Accuracy on OCRVQA: 63.50%
+GQA protocol: testdev-balanced accuracy only (scene-graph evaluator unavailable)
+GQA Accuracy: 61.79%
+
+Samples: 5000
+Accuracy on TextVQA: 57.99%
+end=2026-10-08T02:07:15-04:00
