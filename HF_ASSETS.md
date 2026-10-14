@@ -2,7 +2,7 @@
 
 目标仓库：https://huggingface.co/datasets/weitao040702/LoRASculptPlus_OptimizerAblations
 
-当前状态：上传待启动，服务器尚未完成 HF 登录。此链接是目标地址，不代表全部文件已经可下载。
+当前状态：HF 登录已确认，目标仓库为私有仓库。独立后台上传工作流已启动（PID 796903），先整理文件清单，再上传并验证。此链接不代表全部文件已经可下载；完成以日志中的 `VERIFIED` 为准。
 
 上传范围为 `assets/data/`、`assets/models/`、`checkpoints/` 的完整实体内容，包括已有数据包、模型、adapter、训练状态和评测输出。代码、日志、汇总和交接文档保存在 GitHub；Python 环境、缓存及临时文件不上传。
 
