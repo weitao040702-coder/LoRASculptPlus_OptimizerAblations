@@ -1,3 +1,17 @@
+# LoRASculptPlus_OptimizerAblations
+
+This repository contains a local LoRASculpt+ reproduction and optimizer ablations, including masked AB-manifold retraction and Muon. It is a research extension, not the official LoRASculpt repository.
+
+For masked AB-manifold, use `ABManifoldLoRASculptPlus` in `llava/train/LoRASculptPlusOptimizerTrainer.py`. The method disables the original orthogonal loss, retains SRR and both CMR terms, and applies AdamW update, A/B retraction, then SRR masking.
+
+Training uses a fixed IconQA 10,000-example subset. The four upstream benchmarks are OKVQA, OCRVQA, GQA and TextVQA; IconQA evaluation is not part of these experiments. Historical scripts for other experiments are retained for provenance and should not be launched indiscriminately.
+
+Models, datasets, checkpoints, environments, logs and results are excluded from this Git repository. Configure local asset paths and the Python environment before running the scripts. Cluster job IDs and paths in historical scripts are not portable.
+
+The original upstream README and citation are preserved below for attribution. Its general-purpose launch commands do not describe this repository's ablation workflow.
+
+---
+
 # [CVPR'25 Oral] LoRASculpt
 
 This repository is built for the paper [LoRASculpt: Sculpting LoRA for Harmonizing General and Specialized Knowledge in Multimodal Large Language Models](https://arxiv.org/abs/2503.16843).
