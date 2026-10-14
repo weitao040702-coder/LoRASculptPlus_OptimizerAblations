@@ -1,0 +1,86 @@
+#########################BEGIN-PROLOG#########################
+JobName   = qianr-optab-resume
+Account   = yanggrp
+NodeList  = gpu-a100-01
+Resources = cpu=16,mem=200G,node=1,billing=26419,gres/gpu=3,gres/gpu:a100_80=3
+WorkDir   = /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations
+###########################END-PROLOG#########################
+LoRASculpt environment ready: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda
+Python: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/bin/python
+RESUME_START allocation=8375696 host=gpu-a100-01.deac.wfu.edu time=2026-10-07T18:44:31-04:00
+GPU_COUNT=3 CUDA_VISIBLE_DEVICES=0,1,2
+[2026-10-07 18:44:38,321] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+SKIP_TRAIN method=ABManifold rank=16 reason=checkpoint-present
+SKIP_TRAIN method=ABManifold rank=32 reason=checkpoint-present
+SKIP_TRAIN method=ABManifold rank=64 reason=checkpoint-present
+[2026-10-07 18:44:46,835] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+PENDING_EVAL method=ABManifold ranks=16 32 64 gpu_count=3
+EVAL_START method=ABManifold rank=32 gpu=1 cuda_visible=1 host=gpu-a100-01.deac.wfu.edu start=2026-10-07T18:44:50-04:00 epoch=1791413090
+checkpoint=/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/checkpoints/ABManifold-r32
+EVAL_START method=ABManifold rank=64 gpu=2 cuda_visible=2 host=gpu-a100-01.deac.wfu.edu start=2026-10-07T18:44:50-04:00 epoch=1791413090
+checkpoint=/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/checkpoints/ABManifold-r64
+EVAL_START method=ABManifold rank=16 gpu=0 cuda_visible=0 host=gpu-a100-01.deac.wfu.edu start=2026-10-07T18:44:50-04:00 epoch=1791413090
+checkpoint=/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/checkpoints/ABManifold-r16
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+[2026-10-07 18:44:55,088] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2026-10-07 18:44:55,092] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2026-10-07 18:44:55,132] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/gqa/llava_gqa_testdev_balanced.jsonl: rows=12578 images=398
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl: rows=5000 images=3166
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/okvqa/okvqa_val.jsonl: rows=5046 images=5033
+Traceback (most recent call last):
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/scripts/verify_upstream_eval.py", line 45, in <module>
+    main()
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/scripts/verify_upstream_eval.py", line 33, in main
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/gqa/llava_gqa_testdev_balanced.jsonl: rows=12578 images=398
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl: rows=5000 images=3166
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/okvqa/okvqa_val.jsonl: rows=5046 images=5033
+Traceback (most recent call last):
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/scripts/verify_upstream_eval.py", line 45, in <module>
+    check_jsonl(root / "ocrvqa/sampled_ocrvqa_test.jsonl", root / "ocrvqa/sampled_images")
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/scripts/verify_upstream_eval.py", line 20, in check_jsonl
+    main()
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/scripts/verify_upstream_eval.py", line 33, in main
+    raise RuntimeError(f"{path}: missing {len(missing)} images, first={missing[0]}")
+RuntimeError: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/ocrvqa/sampled_ocrvqa_test.jsonl: missing 5000 images, first=1250042755.jpg
+    check_jsonl(root / "ocrvqa/sampled_ocrvqa_test.jsonl", root / "ocrvqa/sampled_images")
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/scripts/verify_upstream_eval.py", line 20, in check_jsonl
+    raise RuntimeError(f"{path}: missing {len(missing)} images, first={missing[0]}")
+RuntimeError: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/ocrvqa/sampled_ocrvqa_test.jsonl: missing 5000 images, first=1250042755.jpg
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/gqa/llava_gqa_testdev_balanced.jsonl: rows=12578 images=398
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl: rows=5000 images=3166
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/okvqa/okvqa_val.jsonl: rows=5046 images=5033
+Traceback (most recent call last):
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/scripts/verify_upstream_eval.py", line 45, in <module>
+    main()
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/scripts/verify_upstream_eval.py", line 33, in main
+    check_jsonl(root / "ocrvqa/sampled_ocrvqa_test.jsonl", root / "ocrvqa/sampled_images")
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/scripts/verify_upstream_eval.py", line 20, in check_jsonl
+    raise RuntimeError(f"{path}: missing {len(missing)} images, first={missing[0]}")
+RuntimeError: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/ocrvqa/sampled_ocrvqa_test.jsonl: missing 5000 images, first=1250042755.jpg
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+[2026-10-07 18:45:11,255] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2026-10-07 18:45:11,256] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2026-10-07 18:45:11,257] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)

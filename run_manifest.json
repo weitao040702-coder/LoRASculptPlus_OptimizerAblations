@@ -1,0 +1,303 @@
+{
+  "allocation_job_id": "8378610",
+  "node": "gpu-a100-02.deac.wfu.edu",
+  "methods": [
+    "AB-manifold",
+    "Muon"
+  ],
+  "ranks": [
+    16,
+    32,
+    64
+  ],
+  "orthogonal_loss": false,
+  "config": {
+    "seed": 42,
+    "global_batch_size": 16,
+    "per_device_train_batch_size": 1,
+    "gradient_accumulation_steps": 16,
+    "epochs": 3,
+    "llm_learning_rate": 0.0002,
+    "connector_learning_rate": 2e-05,
+    "scheduler": "cosine",
+    "warmup_ratio": 0.03,
+    "deepspeed": false,
+    "srr": {
+      "warmup_steps": 100,
+      "preserve_ratio": 0.1
+    },
+    "cmr": {
+      "llm_lambda": 0.001,
+      "connector_lambda": 1e-05
+    },
+    "muon": {
+      "momentum": 0.95,
+      "newton_schulz_steps": 5,
+      "nesterov": true
+    }
+  },
+  "local_baseline": {
+    "16": {
+      "OKVQA": 57.4,
+      "OCRVQA": 63.42,
+      "GQA": 61.22,
+      "TextVQA": 57.79
+    },
+    "32": {
+      "OKVQA": 57.3,
+      "OCRVQA": 62.98,
+      "GQA": 61.38,
+      "TextVQA": 58.05
+    },
+    "64": {
+      "OKVQA": 57.46,
+      "OCRVQA": 62.74,
+      "GQA": 61.81,
+      "TextVQA": 57.82
+    }
+  },
+  "paper_reference": {
+    "16": {
+      "OKVQA": 57.34,
+      "OCRVQA": 62.1,
+      "GQA": 60.96,
+      "TextVQA": 57.4
+    },
+    "32": {
+      "OKVQA": 57.23,
+      "OCRVQA": 64.5,
+      "GQA": 60.86,
+      "TextVQA": 57.38
+    },
+    "64": {
+      "OKVQA": 56.65,
+      "OCRVQA": 63.9,
+      "GQA": 59.84,
+      "TextVQA": 55.48
+    }
+  },
+  "rows": [
+    {
+      "Method": "AB-manifold",
+      "Rank": 16,
+      "OKVQA": 57.92,
+      "OCRVQA": 63.5,
+      "GQA": 61.79,
+      "TextVQA": 57.99,
+      "Source Avg": 60.300000000000004,
+      "Delta vs Local LoRASculpt+": 0.34250000000000824,
+      "Delta vs Paper": 0.8500000000000014,
+      "Train Time (s)": 18918,
+      "Eval Time (s)": 3264,
+      "Peak VRAM (MiB)": 33743,
+      "Status": "COMPLETED",
+      "Checkpoint": "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/checkpoints/ABManifold-r16",
+      "Optimizer": "AdamW",
+      "DeepSpeed": false,
+      "SRR": true,
+      "CMR": true,
+      "ORTHO_LAMBDA": 0,
+      "AB Stats": {
+        "a_nonzero_ratio": 0.1079561807020478,
+        "a_norm_after_projection": 1.5144719808502536,
+        "a_norm_before": 1.5144862896573228,
+        "a_residual_after_mask": 0.0030816684011369944,
+        "a_residual_before_mask": 0.0030816684011369944,
+        "b_nonzero_ratio": 0.10795683388750267,
+        "b_norm_after_projection": 0.6081412928755832,
+        "b_norm_before": 0.6081476264624996,
+        "b_residual_after_mask": 0.0002719985495787114,
+        "b_residual_before_mask": 0.0003084016207139939,
+        "layers": 226.0
+      },
+      "Muon Config": {},
+      "Eval Samples": {
+        "GQA": 12578,
+        "OCRVQA": 5000,
+        "OKVQA": 5046,
+        "TextVQA": 5000
+      }
+    },
+    {
+      "Method": "AB-manifold",
+      "Rank": 32,
+      "OKVQA": 58.0,
+      "OCRVQA": 63.7,
+      "GQA": 61.78,
+      "TextVQA": 57.97,
+      "Source Avg": 60.362500000000004,
+      "Delta vs Local LoRASculpt+": 0.4350000000000094,
+      "Delta vs Paper": 0.37000000000001165,
+      "Train Time (s)": 20429,
+      "Eval Time (s)": 3304,
+      "Peak VRAM (MiB)": 33743,
+      "Status": "COMPLETED",
+      "Checkpoint": "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/checkpoints/ABManifold-r32",
+      "Optimizer": "AdamW",
+      "DeepSpeed": false,
+      "SRR": true,
+      "CMR": true,
+      "ORTHO_LAMBDA": 0,
+      "AB Stats": {
+        "a_nonzero_ratio": 0.10796306427184096,
+        "a_norm_after_projection": 2.1341258630288387,
+        "a_norm_before": 2.1341189942528715,
+        "a_residual_after_mask": 0.0030761139933019876,
+        "a_residual_before_mask": 0.0030761139933019876,
+        "b_nonzero_ratio": 0.10796303914932352,
+        "b_norm_after_projection": 0.822580789207621,
+        "b_norm_before": 0.8225834929441984,
+        "b_residual_after_mask": 0.00023540107940789312,
+        "b_residual_before_mask": 0.00023528418387286365,
+        "layers": 226.0
+      },
+      "Muon Config": {},
+      "Eval Samples": {
+        "GQA": 12578,
+        "OCRVQA": 5000,
+        "OKVQA": 5046,
+        "TextVQA": 5000
+      }
+    },
+    {
+      "Method": "AB-manifold",
+      "Rank": 64,
+      "OKVQA": 58.2,
+      "OCRVQA": 63.64,
+      "GQA": 62.12,
+      "TextVQA": 58.08,
+      "Source Avg": 60.510000000000005,
+      "Delta vs Local LoRASculpt+": 0.5525000000000091,
+      "Delta vs Paper": 1.542500000000011,
+      "Train Time (s)": 24264,
+      "Eval Time (s)": 3304,
+      "Peak VRAM (MiB)": 33743,
+      "Status": "COMPLETED",
+      "Checkpoint": "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/checkpoints/ABManifold-r64",
+      "Optimizer": "AdamW",
+      "DeepSpeed": false,
+      "SRR": true,
+      "CMR": true,
+      "ORTHO_LAMBDA": 0,
+      "AB Stats": {
+        "a_nonzero_ratio": 0.10796326525198086,
+        "a_norm_after_projection": 3.02471535290237,
+        "a_norm_before": 3.024715545430648,
+        "a_residual_after_mask": 0.003161824308335781,
+        "a_residual_before_mask": 0.003161824308335781,
+        "b_nonzero_ratio": 0.10796344110960329,
+        "b_norm_after_projection": 1.1021106444233286,
+        "b_norm_before": 1.1021092276921314,
+        "b_residual_after_mask": 0.00037957928725518286,
+        "b_residual_before_mask": 0.0004088100395165384,
+        "layers": 226.0
+      },
+      "Muon Config": {},
+      "Eval Samples": {
+        "GQA": 12578,
+        "OCRVQA": 5000,
+        "OKVQA": 5046,
+        "TextVQA": 5000
+      }
+    },
+    {
+      "Method": "Muon",
+      "Rank": 16,
+      "OKVQA": 48.99,
+      "OCRVQA": 57.46,
+      "GQA": 48.46,
+      "TextVQA": 44.97,
+      "Source Avg": 49.97,
+      "Delta vs Local LoRASculpt+": -9.987499999999997,
+      "Delta vs Paper": -9.480000000000004,
+      "Train Time (s)": 18320,
+      "Eval Time (s)": 3245,
+      "Peak VRAM (MiB)": 32865,
+      "Status": "COMPLETED",
+      "Checkpoint": "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/checkpoints/Muon-r16",
+      "Optimizer": "MuonWithAdamW",
+      "DeepSpeed": false,
+      "SRR": true,
+      "CMR": true,
+      "ORTHO_LAMBDA": 0,
+      "AB Stats": {},
+      "Muon Config": {
+        "momentum": 0.95,
+        "newton_schulz_steps": 5,
+        "nesterov": true
+      },
+      "Eval Samples": {
+        "GQA": 12578,
+        "OCRVQA": 5000,
+        "OKVQA": 5046,
+        "TextVQA": 5000
+      }
+    },
+    {
+      "Method": "Muon",
+      "Rank": 32,
+      "OKVQA": 55.47,
+      "OCRVQA": 63.34,
+      "GQA": 58.68,
+      "TextVQA": 53.71,
+      "Source Avg": 57.800000000000004,
+      "Delta vs Local LoRASculpt+": -2.1274999999999906,
+      "Delta vs Paper": -2.1924999999999883,
+      "Train Time (s)": 19977,
+      "Eval Time (s)": 3288,
+      "Peak VRAM (MiB)": 32865,
+      "Status": "COMPLETED",
+      "Checkpoint": "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/checkpoints/Muon-r32",
+      "Optimizer": "MuonWithAdamW",
+      "DeepSpeed": false,
+      "SRR": true,
+      "CMR": true,
+      "ORTHO_LAMBDA": 0,
+      "AB Stats": {},
+      "Muon Config": {
+        "momentum": 0.95,
+        "newton_schulz_steps": 5,
+        "nesterov": true
+      },
+      "Eval Samples": {
+        "GQA": 12578,
+        "OCRVQA": 5000,
+        "OKVQA": 5046,
+        "TextVQA": 5000
+      }
+    },
+    {
+      "Method": "Muon",
+      "Rank": 64,
+      "OKVQA": 56.99,
+      "OCRVQA": 62.26,
+      "GQA": 61.05,
+      "TextVQA": 56.87,
+      "Source Avg": 59.292500000000004,
+      "Delta vs Local LoRASculpt+": -0.664999999999992,
+      "Delta vs Paper": 0.32500000000000995,
+      "Train Time (s)": 23081,
+      "Eval Time (s)": 3296,
+      "Peak VRAM (MiB)": 32865,
+      "Status": "COMPLETED",
+      "Checkpoint": "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/checkpoints/Muon-r64",
+      "Optimizer": "MuonWithAdamW",
+      "DeepSpeed": false,
+      "SRR": true,
+      "CMR": true,
+      "ORTHO_LAMBDA": 0,
+      "AB Stats": {},
+      "Muon Config": {
+        "momentum": 0.95,
+        "newton_schulz_steps": 5,
+        "nesterov": true
+      },
+      "Eval Samples": {
+        "GQA": 12578,
+        "OCRVQA": 5000,
+        "OKVQA": 5046,
+        "TextVQA": 5000
+      }
+    }
+  ]
+}

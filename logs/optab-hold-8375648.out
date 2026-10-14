@@ -1,0 +1,7 @@
+#########################BEGIN-PROLOG#########################
+JobName   = qianr-optab-a1002
+Account   = yanggrp
+NodeList  = gpu-a100-04
+Resources = cpu=8,mem=32G,node=1,billing=4227,gres/gpu=2,gres/gpu:a100_40=2
+WorkDir   = /deac/csc/yangGrp/qianr
+###########################END-PROLOG#########################

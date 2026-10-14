@@ -1,0 +1,148 @@
+#########################BEGIN-PROLOG#########################
+JobName   = qianr-optab-resume-200g
+Account   = yanggrp
+NodeList  = gpu-a100-02
+Resources = cpu=16,mem=200G,node=1,billing=26419,gres/gpu=4,gres/gpu:a100_80=4
+WorkDir   = /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations
+###########################END-PROLOG#########################
+LoRASculpt environment ready: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda
+Python: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/bin/python
+RESUME_ALLOCATION job=8378552 node=gpu-a100-02.deac.wfu.edu
+GRES=0,1,2,3 CUDA_VISIBLE_DEVICES=0,1,2,3
+0, NVIDIA A100 80GB PCIe, 81920 MiB, 81152 MiB
+1, NVIDIA A100 80GB PCIe, 81920 MiB, 81152 MiB
+2, NVIDIA A100 80GB PCIe, 81920 MiB, 81152 MiB
+3, NVIDIA A100 80GB PCIe, 81920 MiB, 81152 MiB
+LoRASculpt environment ready: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda
+Python: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/bin/python
+RESUME_START allocation=8378552 host=gpu-a100-02.deac.wfu.edu time=2026-10-08T00:36:59-04:00
+GPU_COUNT=4 CUDA_VISIBLE_DEVICES=0,1,2,3
+[2026-10-08 00:37:12,253] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+SKIP_TRAIN method=ABManifold rank=16 reason=checkpoint-present
+SKIP_TRAIN method=ABManifold rank=32 reason=checkpoint-present
+SKIP_TRAIN method=ABManifold rank=64 reason=checkpoint-present
+[2026-10-08 00:37:23,968] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+PENDING_EVAL method=ABManifold ranks=16 32 64 gpu_count=4
+EVAL_START method=ABManifold rank=16 gpu=0 cuda_visible=0 host=gpu-a100-02.deac.wfu.edu start=2026-10-08T00:37:27-04:00 epoch=1791434247
+checkpoint=/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/checkpoints/ABManifold-r16
+EVAL_START method=ABManifold rank=64 gpu=2 cuda_visible=2 host=gpu-a100-02.deac.wfu.edu start=2026-10-08T00:37:27-04:00 epoch=1791434247
+checkpoint=/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/checkpoints/ABManifold-r64
+EVAL_START method=ABManifold rank=32 gpu=1 cuda_visible=1 host=gpu-a100-02.deac.wfu.edu start=2026-10-08T00:37:27-04:00 epoch=1791434247
+checkpoint=/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/checkpoints/ABManifold-r32
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+[2026-10-08 00:37:31,482] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2026-10-08 00:37:31,482] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2026-10-08 00:37:31,486] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/gqa/llava_gqa_testdev_balanced.jsonl: rows=12578 images=398
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl: rows=5000 images=3166
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/okvqa/okvqa_val.jsonl: rows=5046 images=5033
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/ocrvqa/sampled_ocrvqa_test.jsonl: rows=5000 images=4545
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/okvqa/mscoco_val2014_annotations.json
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/okvqa/OpenEnded_mscoco_val2014_questions.json
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/textvqa/TextVQA_0.5.1_val.json
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/gqa/llava_gqa_testdev_balanced.jsonl: rows=12578 images=398
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl: rows=5000 images=3166
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/okvqa/okvqa_val.jsonl: rows=5046 images=5033
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/ocrvqa/sampled_ocrvqa_test.jsonl: rows=5000 images=4545
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/okvqa/mscoco_val2014_annotations.json
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/okvqa/OpenEnded_mscoco_val2014_questions.json
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/textvqa/TextVQA_0.5.1_val.json
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/gqa/llava_gqa_testdev_balanced.jsonl: rows=12578 images=398
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/textvqa/llava_textvqa_val_v051_ocr.jsonl: rows=5000 images=3166
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/okvqa/okvqa_val.jsonl: rows=5046 images=5033
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/ocrvqa/sampled_ocrvqa_test.jsonl: rows=5000 images=4545
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/okvqa/mscoco_val2014_annotations.json
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/okvqa/OpenEnded_mscoco_val2014_questions.json
+OK /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/assets/data/eval/textvqa/TextVQA_0.5.1_val.json
+DATASET_START dataset=okvqa time=2026-10-08T00:37:49-04:00
+DATASET_START dataset=okvqa time=2026-10-08T00:37:49-04:00
+DATASET_START dataset=okvqa time=2026-10-08T00:37:49-04:00
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+[2026-10-08 00:37:54,851] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2026-10-08 00:37:54,851] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2026-10-08 00:37:54,851] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+Traceback (most recent call last):
+Traceback (most recent call last):
+Traceback (most recent call last):
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/runpy.py", line 86, in _run_code
+    return _run_code(code, main_globals, None,
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/runpy.py", line 86, in _run_code
+    return _run_code(code, main_globals, None,
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/llava/eval/model_vqa_loader.py", line 155, in <module>
+    exec(code, run_globals)
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/llava/eval/model_vqa_loader.py", line 155, in <module>
+    exec(code, run_globals)
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/llava/eval/model_vqa_loader.py", line 155, in <module>
+    eval_model(args)
+    eval_model(args)
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/llava/eval/model_vqa_loader.py", line 88, in eval_model
+    eval_model(args)
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/llava/eval/model_vqa_loader.py", line 88, in eval_model
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/llava/eval/model_vqa_loader.py", line 88, in eval_model
+    tokenizer, model, image_processor, context_len = load_pretrained_model(
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/llava/model/builder.py", line 161, in load_pretrained_model
+    tokenizer, model, image_processor, context_len = load_pretrained_model(
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/llava/model/builder.py", line 161, in load_pretrained_model
+    tokenizer, model, image_processor, context_len = load_pretrained_model(
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/llava/model/builder.py", line 161, in load_pretrained_model
+    model = AutoModelForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, **kwargs)
+    model = AutoModelForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, **kwargs)
+    model = AutoModelForCausalLM.from_pretrained(model_base, low_cpu_mem_usage=True, **kwargs)
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 569, in from_pretrained
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 569, in from_pretrained
+  File "/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/models/auto/auto_factory.py", line 569, in from_pretrained
+    raise ValueError(
+    raise ValueError(
+    raise ValueError(
+ValueError: Unrecognized configuration class <class 'transformers.models.llava.configuration_llava.LlavaConfig'> for this kind of AutoModel: AutoModelForCausalLM.
+Model type should be one of BartConfig, BertConfig, BertGenerationConfig, BigBirdConfig, BigBirdPegasusConfig, BioGptConfig, BlenderbotConfig, BlenderbotSmallConfig, BloomConfig, CamembertConfig, LlamaConfig, CodeGenConfig, CpmAntConfig, CTRLConfig, Data2VecTextConfig, ElectraConfig, ErnieConfig, FalconConfig, FuyuConfig, GitConfig, GPT2Config, GPT2Config, GPTBigCodeConfig, GPTNeoConfig, GPTNeoXConfig, GPTNeoXJapaneseConfig, GPTJConfig, LlamaConfig, MarianConfig, MBartConfig, MegaConfig, MegatronBertConfig, MistralConfig, MixtralConfig, MptConfig, MusicgenConfig, MvpConfig, OpenLlamaConfig, OpenAIGPTConfig, OPTConfig, PegasusConfig, PersimmonConfig, PhiConfig, PLBartConfig, ProphetNetConfig, QDQBertConfig, Qwen2Config, ReformerConfig, RemBertConfig, RobertaConfig, RobertaPreLayerNormConfig, RoCBertConfig, RoFormerConfig, RwkvConfig, Speech2Text2Config, TransfoXLConfig, TrOCRConfig, WhisperConfig, XGLMConfig, XLMConfig, XLMProphetNetConfig, XLMRobertaConfig, XLMRobertaXLConfig, XLNetConfig, XmodConfig, LlavaConfig, LlavaMptConfig, LlavaMistralConfig.ValueError: Unrecognized configuration class <class 'transformers.models.llava.configuration_llava.LlavaConfig'> for this kind of AutoModel: AutoModelForCausalLM.
+Model type should be one of BartConfig, BertConfig, BertGenerationConfig, BigBirdConfig, BigBirdPegasusConfig, BioGptConfig, BlenderbotConfig, BlenderbotSmallConfig, BloomConfig, CamembertConfig, LlamaConfig, CodeGenConfig, CpmAntConfig, CTRLConfig, Data2VecTextConfig, ElectraConfig, ErnieConfig, FalconConfig, FuyuConfig, GitConfig, GPT2Config, GPT2Config, GPTBigCodeConfig, GPTNeoConfig, GPTNeoXConfig, GPTNeoXJapaneseConfig, GPTJConfig, LlamaConfig, MarianConfig, MBartConfig, MegaConfig, MegatronBertConfig, MistralConfig, MixtralConfig, MptConfig, MusicgenConfig, MvpConfig, OpenLlamaConfig, OpenAIGPTConfig, OPTConfig, PegasusConfig, PersimmonConfig, PhiConfig, PLBartConfig, ProphetNetConfig, QDQBertConfig, Qwen2Config, ReformerConfig, RemBertConfig, RobertaConfig, RobertaPreLayerNormConfig, RoCBertConfig, RoFormerConfig, RwkvConfig, Speech2Text2Config, TransfoXLConfig, TrOCRConfig, WhisperConfig, XGLMConfig, XLMConfig, XLMProphetNetConfig, XLMRobertaConfig, XLMRobertaXLConfig, XLNetConfig, XmodConfig, LlavaConfig, LlavaMptConfig, LlavaMistralConfig.
+
+ValueError: Unrecognized configuration class <class 'transformers.models.llava.configuration_llava.LlavaConfig'> for this kind of AutoModel: AutoModelForCausalLM.
+Model type should be one of BartConfig, BertConfig, BertGenerationConfig, BigBirdConfig, BigBirdPegasusConfig, BioGptConfig, BlenderbotConfig, BlenderbotSmallConfig, BloomConfig, CamembertConfig, LlamaConfig, CodeGenConfig, CpmAntConfig, CTRLConfig, Data2VecTextConfig, ElectraConfig, ErnieConfig, FalconConfig, FuyuConfig, GitConfig, GPT2Config, GPT2Config, GPTBigCodeConfig, GPTNeoConfig, GPTNeoXConfig, GPTNeoXJapaneseConfig, GPTJConfig, LlamaConfig, MarianConfig, MBartConfig, MegaConfig, MegatronBertConfig, MistralConfig, MixtralConfig, MptConfig, MusicgenConfig, MvpConfig, OpenLlamaConfig, OpenAIGPTConfig, OPTConfig, PegasusConfig, PersimmonConfig, PhiConfig, PLBartConfig, ProphetNetConfig, QDQBertConfig, Qwen2Config, ReformerConfig, RemBertConfig, RobertaConfig, RobertaPreLayerNormConfig, RoCBertConfig, RoFormerConfig, RwkvConfig, Speech2Text2Config, TransfoXLConfig, TrOCRConfig, WhisperConfig, XGLMConfig, XLMConfig, XLMProphetNetConfig, XLMRobertaConfig, XLMRobertaXLConfig, XLNetConfig, XmodConfig, LlavaConfig, LlavaMptConfig, LlavaMistralConfig.
+OK-VQA inference failed
+OK-VQA inference failed
+OK-VQA inference failed
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
+  warnings.warn(
+[2026-10-08 00:38:02,541] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2026-10-08 00:38:02,543] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
+[2026-10-08 00:38:02,710] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)

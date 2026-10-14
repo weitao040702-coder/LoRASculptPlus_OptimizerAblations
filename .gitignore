@@ -3,8 +3,6 @@
 .conda
 assets
 checkpoints/
-logs/
-progress/
 images/
 
 # Python build/runtime files
@@ -15,13 +13,8 @@ __pycache__/
 .pytest_cache/
 
 # Local experiment outputs
-results/
-results.csv
-results.md
-run_manifest.json
-*.out
-*.err
-*.gpu.csv
+# Preserve research summaries, logs and progress in Git.
+progress/.progress.lock
 
 # Secrets and editor files
 .env

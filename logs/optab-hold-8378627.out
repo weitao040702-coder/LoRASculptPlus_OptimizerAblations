@@ -1,0 +1,11 @@
+#########################BEGIN-PROLOG#########################
+JobName   = qianr-optab-hold
+Account   = yanggrp
+NodeList  = gpu-a100-02
+Resources = cpu=1,mem=4G,node=1,billing=528,gres/gpu=3,gres/gpu:a100_80=3
+WorkDir   = /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations
+###########################END-PROLOG#########################
+HOLD_START job=8378627 node=gpu-a100-02.deac.wfu.edu cuda=0,1,2 until=2026-10-22T01:10:00-04:00
+0, NVIDIA A100 80GB PCIe, 81920 MiB, 81152 MiB
+1, NVIDIA A100 80GB PCIe, 81920 MiB, 81152 MiB
+2, NVIDIA A100 80GB PCIe, 81920 MiB, 81152 MiB
