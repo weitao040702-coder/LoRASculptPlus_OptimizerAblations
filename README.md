@@ -8,7 +8,7 @@ Training uses a fixed IconQA 10,000-example subset. The four upstream benchmarks
 
 Code, experiment logs, result summaries, benchmark predictions and handoff documents are included in this Git repository. Large model and dataset files and binary checkpoints are hosted separately; Python environments and caches are excluded. Configure local asset paths and the Python environment before running the scripts. Cluster job IDs and paths in historical scripts are not portable.
 
-Asset repository: [Hugging Face dataset](https://huggingface.co/datasets/weitao040702/LoRASculptPlus_OptimizerAblations) (private). **The background inventory/upload workflow has started; the full upload is not yet verified.** See [HF_ASSETS.md](HF_ASSETS.md) for the upload scope, resumable upload procedure and download instructions.
+Asset repository: [Hugging Face dataset](https://huggingface.co/datasets/weitao040702/LoRASculptPlus_OptimizerAblations) (public). **Upload is incomplete. After private storage was exhausted, the owner authorized public visibility and a single-worker resumable upload was restarted.** See [HF_ASSETS.md](HF_ASSETS.md) for upload and download instructions.
 
 The original upstream README and citation are preserved below for attribution. Its general-purpose launch commands do not describe this repository's ablation workflow.
 
