@@ -20,8 +20,15 @@ def eval_single(annotation_file, result_file):
     experiment_name = os.path.splitext(os.path.basename(result_file))[0]
     # annotations = json.load(open(annotation_file))
     annotations = [json.loads(line) for line in open(annotation_file)]
+    annotation_ids = [data['question_id'] for data in annotations]
+    if len(set(annotation_ids)) != len(annotation_ids):
+        raise ValueError('Duplicate OCRVQA annotation IDs')
     annotations = {data['question_id']: data for data in annotations}
     results = [json.loads(line) for line in open(result_file)]
+
+    result_ids = [result['question_id'] for result in results]
+    if not results or len(set(result_ids)) != len(result_ids) or set(result_ids) != set(annotations):
+        raise ValueError('OCRVQA requires exactly one prediction per annotation')
 
     pred_list = []
     total = len(results)
@@ -31,7 +38,7 @@ def eval_single(annotation_file, result_file):
         ground_truth = annotation['answer']
         pred_list.append({"pred_answer": result['text']})
 
-        if result['text'].lower() == ground_truth.lower():
+        if result['text'].strip().lower() == ground_truth.strip().lower():
             right += 1
 
 

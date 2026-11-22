@@ -15,6 +15,12 @@
 #    limitations under the License.
 
 import os
+if os.environ.get('OPTAB_DIAGNOSTICS') == '1':
+    import faulthandler
+    import signal
+    faulthandler.enable()
+    faulthandler.register(signal.SIGUSR1, all_threads=True)
+    faulthandler.dump_traceback_later(180, repeat=True)
 import copy
 from dataclasses import dataclass, field
 import json
@@ -44,6 +50,7 @@ LORASCULPT_PLUS_TRAINERS = {
     "LoRASculptPlus",
     "ABManifoldLoRASculptPlus",
     "MuonLoRASculptPlus",
+    "OrbitStiefelLoRASculptPlus",
 }
 
 
@@ -801,6 +808,11 @@ def train(attn_implementation=None):
     parser = transformers.HfArgumentParser(
         (ModelArguments, DataArguments, TrainingArguments))
     model_args, data_args, training_args = parser.parse_args_into_dataclasses()
+    if model_args.trainer_name == "OrbitStiefelLoRASculptPlus":
+        # Seed adapter/QR initialization too, before Trainer is constructed.
+        transformers.set_seed(training_args.seed)
+        # Transformers 4.37 HfArgumentParser does not parse a dict CLI value.
+        training_args.gradient_checkpointing_kwargs = {"use_reentrant": False}
     lorasculpt_plus_metadata = None
     local_rank = training_args.local_rank
     compute_dtype = (torch.float16 if training_args.fp16 else (torch.bfloat16 if training_args.bf16 else torch.float32))
@@ -835,8 +847,14 @@ def train(attn_implementation=None):
                 **bnb_model_from_pretrained_args
             )
         else:
+            # Resolve the vision tower before the LLaVA constructor's delayed
+            # CLIP config load, rather than only in initialize_vision_modules.
+            from llava.model.language_model.llava_llama import LlavaConfig
+            config = LlavaConfig.from_pretrained(model_args.model_name_or_path)
+            config.mm_vision_tower = model_args.vision_tower
             model = LlavaLlamaForCausalLM.from_pretrained(
                 model_args.model_name_or_path,
+                config=config,
                 cache_dir=training_args.cache_dir,
                 attn_implementation=attn_implementation,
                 torch_dtype=(torch.bfloat16 if training_args.bf16 else None),
@@ -1011,6 +1029,20 @@ def train(attn_implementation=None):
     #                 **data_module)
 
 
+    if model_args.trainer_name == "OrbitStiefelLoRASculptPlus":
+        from llava.model.orbit_stiefel import DEFAULTS, install
+        import json as orbit_json
+        method_config = dict(DEFAULTS)
+        if os.environ.get("ORBIT_STIEFEL_CONFIG"):
+            with open(os.environ["ORBIT_STIEFEL_CONFIG"]) as handle:
+                method_config.update(orbit_json.load(handle))
+        method_config["seed"] = training_args.seed
+        if training_args.bits != 16 or training_args.lora_bias != "none":
+            raise ValueError("OrbitStiefel requires 16-bit backbone and lora_bias=none")
+        model.to(training_args.device)
+        install(model, method_config)
+        model.orbit_layout_metadata = lorasculpt_plus_metadata
+
     from llava.train import get_trainer
     trainer = get_trainer(name=model_args.trainer_name,
                             model=model,
@@ -1028,7 +1060,9 @@ def train(attn_implementation=None):
 
     model.config.use_cache = True
 
-    if training_args.lora_enable:
+    if model_args.trainer_name == "OrbitStiefelLoRASculptPlus":
+        trainer.save_model(training_args.output_dir)
+    elif training_args.lora_enable:
         state_dict = get_peft_state_maybe_zero_3(
             model.named_parameters(), training_args.lora_bias
         )

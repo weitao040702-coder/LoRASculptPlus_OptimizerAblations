@@ -1,0 +1,9 @@
+{
+  "warmup_steps": 100,
+  "keep_ratio": 0.1,
+  "orbit_iterations": 10,
+  "protection_rank": 8,
+  "protection_lambda": 0.001,
+  "connector_sparse_lambda": 0.0,
+  "seed": 42
+}

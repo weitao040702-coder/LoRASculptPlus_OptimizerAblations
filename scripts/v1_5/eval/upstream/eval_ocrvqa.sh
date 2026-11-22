@@ -1,5 +1,6 @@
 #!/bin/bash
 set -e
+source "$(cd "$(dirname "${BASH_SOURCE[0]}")/../../.." && pwd)/eval_serial_guard.sh"
 
 gpu_list="${CUDA_VISIBLE_DEVICES:-0,1,2,3}"
 IFS=',' read -ra GPULIST <<< "$gpu_list"

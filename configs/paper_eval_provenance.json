@@ -1,0 +1,30 @@
+{
+  "ocrvqa": {
+    "verified": true,
+    "verification_scope": "paper_protocol_reconstruction",
+    "author_subset_identical": false,
+    "source": "https://huggingface.co/datasets/nick121381/ocr_vqa_json/blob/f6f6a8246fa846768bef63bbe7606e0ad1810162/dataset.json",
+    "protocol_source": "https://github.com/LiangJian24/LoRASculpt/issues/2",
+    "metadata_sha256": "c9d2bb4c67462e2649be5099a3b790c95ad073fe46243310b79a1d4c8bee75ed",
+    "sha256": "9a45d9928cbe35d7a89d0dcd099be67e5c244465ace4d8335ad2be6a057496e9",
+    "count": 2000,
+    "image_count": 1931,
+    "split": "official test (split=3)",
+    "population_questions": 100429,
+    "sampling_unit": "question-answer pair",
+    "sampling_seed": 42,
+    "sampling_order": "sorted image_id, then original question index",
+    "prompt": "Original question + newline + Answer the question using a single word or phrase.",
+    "metric": "Case-insensitive, whitespace-stripped exact match; LLaVA-HR OCRVQAAccuracyEvaluator",
+    "reason": "Author confirms random 2000 evaluation instances. Reconstructed from official test QA; original author subset IDs unavailable. Published scores are not an exact same-subset comparison."
+  },
+  "gqa": {
+    "metric": "Accuracy on testdev-balanced",
+    "require_official_evaluator": false,
+    "source": "Official GQA eval.py, correct=(predicted==gold); LoRASculpt+.pdf section4.1",
+    "reason": "Compute the exact reported Accuracy with official questions/answers. Scene graphs/choices only support unreported auxiliary metrics; do not block paper Accuracy.",
+    "extra_answer_normalization": false,
+    "verified_against_unmodified_official_evaluator": true,
+    "validation": "automation/orbit-paper-seed42/gqa-metric-validation/comparison.json"
+  }
+}

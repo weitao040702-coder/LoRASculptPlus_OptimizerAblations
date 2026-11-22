@@ -13,12 +13,21 @@ def main():
     parser.add_argument("--output", type=Path, required=True)
     args = parser.parse_args()
     questions = json.loads(args.questions.read_text())
-    predictions = {str(x["questionId"]): str(x["prediction"]).strip().lower() for x in json.loads(args.predictions.read_text())}
+    rows = json.loads(args.predictions.read_text())
+    # Match the official evaluator's `predicted == gold` exactly. The
+    # author's convert_gqa_for_eval.py already normalizes model predictions;
+    # applying extra whitespace/case normalization here changes the metric.
+    predictions = {str(x["questionId"]): x["prediction"] for x in rows}
+    if len(predictions) != len(rows):
+        raise RuntimeError('Duplicate prediction question IDs')
     balanced = [q for q in questions.values() if q.get("isBalanced")]
     missing = [qid for qid, q in questions.items() if q.get("isBalanced") and qid not in predictions]
     if missing:
         raise RuntimeError(f"missing predictions: {len(missing)}")
-    correct = sum(predictions[qid] == str(q["answer"]).strip().lower() for qid, q in questions.items() if q.get("isBalanced"))
+    expected = {qid for qid, q in questions.items() if q.get('isBalanced')}
+    if not expected or set(predictions) != expected:
+        raise RuntimeError('Predictions must match the balanced evaluation question IDs exactly')
+    correct = sum(predictions[qid] == q["answer"] for qid, q in questions.items() if q.get("isBalanced"))
     accuracy = 100.0 * correct / len(balanced)
     text = f"Samples: {len(balanced)}\nAccuracy: {accuracy:.2f}%\n"
     args.output.write_text(text)

@@ -1,0 +1,35 @@
+[
+  {
+    "rank": 16,
+    "step": 1875,
+    "scores": {
+      "okvqa": 57.6,
+      "ocrvqa": 63.6,
+      "gqa": 60.77,
+      "textvqa": 57.04
+    },
+    "source_mean": 59.7525
+  },
+  {
+    "rank": 32,
+    "step": 1875,
+    "scores": {
+      "okvqa": 57.15,
+      "ocrvqa": 63.45,
+      "gqa": 61.07,
+      "textvqa": 57.73
+    },
+    "source_mean": 59.849999999999994
+  },
+  {
+    "rank": 64,
+    "step": 1875,
+    "scores": {
+      "okvqa": 57.51,
+      "ocrvqa": 63.15,
+      "gqa": 61.11,
+      "textvqa": 57.36
+    },
+    "source_mean": 59.7825
+  }
+]

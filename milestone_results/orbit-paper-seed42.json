@@ -1,0 +1,38 @@
+[
+  {
+    "method": "OrbitStiefel",
+    "seed": 42,
+    "rank": 16,
+    "scores": {
+      "okvqa": 57.66,
+      "ocrvqa": 62.7,
+      "gqa": 61.35,
+      "textvqa": 56.86
+    },
+    "source_mean": 59.6425
+  },
+  {
+    "method": "OrbitStiefel",
+    "seed": 42,
+    "rank": 32,
+    "scores": {
+      "okvqa": 58.01,
+      "ocrvqa": 62.9,
+      "gqa": 61.59,
+      "textvqa": 57.07
+    },
+    "source_mean": 59.8925
+  },
+  {
+    "method": "OrbitStiefel",
+    "seed": 42,
+    "rank": 64,
+    "scores": {
+      "okvqa": 58.18,
+      "ocrvqa": 62.95,
+      "gqa": 61.69,
+      "textvqa": 57.08
+    },
+    "source_mean": 59.974999999999994
+  }
+]

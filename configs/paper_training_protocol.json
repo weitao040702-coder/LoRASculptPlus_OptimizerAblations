@@ -1,0 +1,39 @@
+{
+  "seed": 42,
+  "ranks": [
+    16,
+    32,
+    64
+  ],
+  "connector_rank": 128,
+  "train_samples": 10000,
+  "sampling_seed": 42,
+  "train_sha256": "636ef6b88ef780bb82b26fb6f0a573496b0f91d340b406d280e222c90fba1199",
+  "num_train_epochs": 3,
+  "global_batch_size": 16,
+  "gpus": [
+    0,
+    1
+  ],
+  "per_device_train_batch_size": 4,
+  "gradient_accumulation_steps": 2,
+  "llm_learning_rate": 0.0002,
+  "connector_learning_rate": 2e-05,
+  "lora_alpha": 64,
+  "connector_lora_alpha": 64,
+  "warmup_ratio": 0.03,
+  "lr_scheduler_type": "cosine",
+  "weight_decay": 0,
+  "model_max_length": 2048,
+  "save_steps": 100,
+  "paper_source": "LoRASculpt+.pdf section 4.1 and Table 1",
+  "code_source": "https://github.com/LiangJian24/LoRASculpt",
+  "sources_and_limits": {
+    "paper_explicit": "Random 10k training examples; 3 epochs; global batch16; LLM LR2e-4; connector LR2e-5; connector rank128; LLM ranks16/32/64",
+    "author_code": "alpha64, cosine, warmup0.03, weight_decay0, bf16, tf32, max_length2048, image padding, vision layer-2 and save_steps10000; public repository is the CVPR version, not a released TPAMI+ implementation",
+    "local_choices": "Training/sampling seed42; deterministic image-marker placement; author-cited Mantis choose_txt formatting; connector alpha64. Random 10k sample follows paper \u00a74.1; exact author sample IDs and TPAMI+ preprocessing are not claimed.",
+    "hardware_adjustments": "Replicated DDP on two GPUs; batch4 and accumulation2 replaces author four-GPU batch4 accumulation1; non-reentrant gradient checkpointing; NCCL socket transport; recovery revision: disable gradient checkpointing to bypass observed checkpoint pack_hook/SystemError+SIGSEGV; save complete state every100 steps (author code10000), without changing optimizer steps or training objective",
+    "new_method": "OrbitSparse, principal subspace protection, spectral connector sparsity, learned-scale Stiefel directions"
+  },
+  "train_json": "assets/data/iconqa/iconqa_txt-train-10000-seed42-paper.json"
+}

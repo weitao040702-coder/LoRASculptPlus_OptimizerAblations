@@ -1,0 +1,18 @@
+{
+  "verified": true,
+  "source": "https://github.com/TIGER-AI-Lab/Mantis/blob/912942133110beaa10dffe0b0ddac0eb851ec61a/data/iconqa/prepare.py",
+  "sha256": "636ef6b88ef780bb82b26fb6f0a573496b0f91d340b406d280e222c90fba1199",
+  "verification_scope": "Paper-protocol reconstruction, not identical author training JSON",
+  "exact_author_subset": false,
+  "paper": "LoRASculpt+.pdf PDF page9 section4.1; CVPR paper section4.1",
+  "sample_count": 10000,
+  "sampling_seed": 42,
+  "task": "choose_txt",
+  "answer_template": "Answer: <choice letter>",
+  "choice_template": "A. <choice>\\nB. <choice>...",
+  "schema_adaptation": "Mantis images/role to LLaVA image/from; textual values preserved",
+  "author_bundle_url": "https://drive.google.com/file/d/1VgjUlCqs7uzdkqsYq_PQDr6ISfa0Acn-/view",
+  "author_script_sha256": "d116aa0464ea776e1261544ee62800db005614125a0a02516758188f8025386f",
+  "all_10000_text_values_compared_to_author_code": true,
+  "all_images_verified": true
+}
