@@ -4,15 +4,23 @@ This repository contains a research extension of LoRASculpt for adapting LLaVA-v
 
 ## Preliminary results
 
-Four-dataset source mean (percentage, seed 42, higher is better):
+The table reports accuracy (%) on four upstream benchmarks after IconQA fine-tuning. The source mean is the arithmetic mean of the four scores. **Bold** marks the highest value within each rank and metric; all values are the recorded results (seed 42).
 
-| LLM rank | Local baseline | OrbitStiefel | No connector sparsity |
-| --- | ---: | ---: | ---: |
-| 16 | 59.75 | 59.64 | 59.66 |
-| 32 | 59.85 | 59.89 | 59.78 |
-| 64 | 59.78 | 59.97 | 59.88 |
+| LLM rank | Method | OKVQA | OCRVQA | GQA | TextVQA | Source mean |
+| ---: | --- | ---: | ---: | ---: | ---: | ---: |
+| 16 | Local baseline | 57.60 | **63.60** | 60.77 | **57.04** | **59.75** |
+| 16 | OrbitStiefel | 57.66 | 62.70 | 61.35 | 56.86 | 59.64 |
+| 16 | Without connector sparsity | **57.69** | 62.75 | **61.45** | 56.76 | 59.66 |
+| 32 | Local baseline | 57.15 | **63.45** | 61.07 | **57.73** | 59.85 |
+| 32 | OrbitStiefel | **58.01** | 62.90 | 61.59 | 57.07 | **59.89** |
+| 32 | Without connector sparsity | 57.97 | 62.70 | **61.60** | 56.84 | 59.78 |
+| 64 | Local baseline | 57.51 | **63.15** | 61.11 | **57.36** | 59.78 |
+| 64 | OrbitStiefel | **58.18** | 62.95 | **61.69** | 57.08 | **59.97** |
+| 64 | Without connector sparsity | 57.89 | 63.05 | 61.54 | 57.06 | 59.88 |
 
-The underlying four scores and unrounded means are in `milestone_results/`. Print the table using `python3 scripts/milestone_results.py` (less than a second). Training and evaluation use the same locally reconstructed data across the main comparison, but execution configurations differ. Only one seed was run; no IconQA target accuracy is reported. OCRVQA is a reproducible local 2,000-question reconstruction, not the original authors' undisclosed sample. Small differences must not be interpreted as established statistical gains. The older ABManifold/Muon results in `results.md` use a different protocol and should not be compared directly.
+OrbitStiefel has a higher source mean than the local baseline at ranks 32 and 64, and a lower mean at rank 16. GQA improves over the baseline at all three ranks, while OCRVQA and TextVQA are lower for OrbitStiefel. These are preliminary single-seed results; the small differences do not establish statistical significance. Training and evaluation use the same locally reconstructed data across the main comparison, but execution configurations differ. IconQA target accuracy has not been evaluated. The OCRVQA sample is a reproducible local 2,000-question reconstruction, not the original authors' undisclosed sample. Earlier ABManifold/Muon results in `results.md` use a different protocol and should not be compared directly.
+
+The underlying scores and unrounded means are in `milestone_results/`; reproduce their existing summary with `python3 scripts/milestone_results.py` (less than a second). Means are displayed as recorded, so rounding may differ by 0.01 when calculated from displayed scores.
 
 ## Environment
 
