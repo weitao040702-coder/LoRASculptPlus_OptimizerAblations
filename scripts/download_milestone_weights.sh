@@ -7,7 +7,7 @@ WORK="$(mktemp -d)"
 trap 'rm -rf "$WORK"' EXIT
 mkdir -p "$ROOT/checkpoints"
 curl -fL --retry 5 --retry-all-errors -o "$WORK/SHA256SUMS" "$BASE/SHA256SUMS"
-for method in Original-paper-seed42 OrbitStiefel-paper-seed42 OrbitStiefelNoConnectorSparse-paper-seed42; do
+for method in Original-paper-seed42 OrbitStiefel-paper-seed42; do
   for rank in 16 32 64; do
     name="${method}-r${rank}"
     if [[ -e "$ROOT/checkpoints/$name" ]]; then
@@ -16,7 +16,7 @@ for method in Original-paper-seed42 OrbitStiefel-paper-seed42 OrbitStiefelNoConn
     fi
   done
 done
-for method in Original-paper-seed42 OrbitStiefel-paper-seed42 OrbitStiefelNoConnectorSparse-paper-seed42; do
+for method in Original-paper-seed42 OrbitStiefel-paper-seed42; do
   for rank in 16 32 64; do
     name="${method}-r${rank}"
     file="$name.tar"

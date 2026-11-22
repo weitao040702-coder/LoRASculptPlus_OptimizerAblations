@@ -4,8 +4,7 @@ import json
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1] / 'milestone_results'
-FILES = ('original-paper-seed42.json', 'orbit-paper-seed42.json',
-         'orbit-no-connector-sparse-seed42.json')
+FILES = ('original-paper-seed42.json', 'orbit-paper-seed42.json')
 
 
 def main():
