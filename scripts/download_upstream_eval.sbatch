@@ -7,8 +7,8 @@
 #SBATCH --mem=64G
 #SBATCH --time=72:00:00
 #SBATCH --job-name=lorasculpt-upstream-data
-#SBATCH --output=/deac/csc/yangGrp/qianr/LoRASculpt/logs/lorasculpt-upstream-data-%j.out
-#SBATCH --error=/deac/csc/yangGrp/qianr/LoRASculpt/logs/lorasculpt-upstream-data-%j.err
+#SBATCH --output=logs/lorasculpt-upstream-data-%j.out
+#SBATCH --error=logs/lorasculpt-upstream-data-%j.err
 #SBATCH --open-mode=append
 
 set -Eeuo pipefail

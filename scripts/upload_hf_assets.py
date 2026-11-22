@@ -13,12 +13,12 @@ from huggingface_hub import HfApi
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--repo", default="weitao040702/LoRASculptPlus_OptimizerAblations")
-    parser.add_argument("--workers", type=int, default=1)
+    parser.add_argument("--workers", type=int, default=4)
     args = parser.parse_args()
     api = HfApi()
-    # Existing repository only: never alter visibility while resuming uploads.
-    info = api.repo_info(args.repo, repo_type="dataset")
-    print("HF repository:", info.id, "private:", info.private, flush=True)
+    print("Authenticated HF account:", api.whoami()["name"], flush=True)
+    # Respect visibility of an existing repo. A new repository starts private.
+    api.create_repo(args.repo, repo_type="dataset", private=True, exist_ok=True)
     stage = ROOT / ".hf-upload-stage"
     stage.mkdir(exist_ok=True)
     records = []
