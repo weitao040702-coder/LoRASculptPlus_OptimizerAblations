@@ -71,7 +71,17 @@ python scripts/verify_upstream_eval.py --eval-root assets/data/eval
 
 Expected checks: IconQA 10,000 records and SHA-256 `636ef6b88ef780bb82b26fb6f0a573496b0f91d340b406d280e222c90fba1199`; OCRVQA 2,000 records and SHA-256 `9a45d9928cbe35d7a89d0dcd099be67e5c244465ace4d8335ad2be6a057496e9`; OKVQA 5,046, GQA 12,578, TextVQA 5,000. The preparation and verification commands were tested with the original local data, but downloading and extracting all archives on a clean machine remains untested. The OCRVQA subset is locally reconstructed and is not claimed to match the authors' undisclosed IDs. `scripts/prepare_upstream_eval.py` defaults to an older 5,000-question OCRVQA protocol: do not use it as the milestone OCR preparation entry point.
 
-The [research asset archive](https://huggingface.co/datasets/weitao040702/LoRASculptPlus_OptimizerAblations) is public, but the prior upload is incomplete and does not guarantee availability of the current adapters or all data. Train the adapters below when they are unavailable; no downloaded adapter should be assumed to be the one used for the reported scores.
+## Published milestone weights
+
+The nine evaluated inference adapters (three methods × three ranks) are available in the [milestone weights release](https://github.com/weitao040702-coder/LoRASculptPlus_OptimizerAblations/releases/tag/milestone-weights-v1). Their `adapter_model.bin` hashes match the recorded completed runs. They require the LLaVA and CLIP base models from the sources above. They do not include optimizer state and cannot be used to resume training.
+
+From a fresh clone, download and verify all nine archives (approximately 3.2 GiB total), then extract them under `checkpoints/`:
+
+```bash
+bash scripts/download_milestone_weights.sh
+```
+
+The script refuses to overwrite any existing checkpoint and adjusts each extracted configuration to use the local CLIP path. Download time depends on bandwidth. Individual archives and `SHA256SUMS` are also available on the release page. See the evaluation commands below to evaluate these weights directly; training can be skipped. The older [research asset archive](https://huggingface.co/datasets/weitao040702/LoRASculptPlus_OptimizerAblations) contains other project data, but its upload was incomplete. A fresh-machine end-to-end evaluation has not yet been verified.
 
 ## Training
 
