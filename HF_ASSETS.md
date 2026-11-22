@@ -34,4 +34,4 @@ hf download weitao040702/LoRASculptPlus_OptimizerAblations \
   --repo-type dataset --local-dir /path/to/LoRASculptPlus_OptimizerAblations
 ```
 
-目录应与GitHub代码目录合并，使 `assets/data`、`assets/models` 和 `checkpoints` 位于项目根目录。检查原模型/adapter配置的绝对CLIP路径并在迁移副本中修改；下载资产不等于Python环境已安装。复现实验细节见 `LoRASculptPlus_MANIFOLD_HANDOFF.md`。
+目录应与GitHub代码目录合并，使 `assets/data`、`assets/models` 和 `checkpoints` 位于项目根目录。检查原模型/adapter配置的绝对CLIP路径并在迁移副本中修改；下载资产不等于Python环境已安装。复现实验细节见 `README.md`。

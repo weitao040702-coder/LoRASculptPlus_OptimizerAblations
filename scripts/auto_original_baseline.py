@@ -344,7 +344,7 @@ def manifest():
     assert len(json.loads(TRAIN.read_text())) == 10000
     ready, reason = eval_ready()
     assert ready, reason
-    return dict(method='Local LoRASculpt+ paper-equation reproduction; NOT AB-manifold or OrbitStiefel',
+    return dict(method='Local LoRASculpt+ paper-equation reproduction',
         seed=42, ranks=[16, 32, 64], train_json=str(TRAIN), train_sha256=digest(TRAIN),
         epochs=3, global_batch=16, per_device_batch='4 preferred, 1 on memory fallback', llm_lr=2e-4, connector_lr=2e-5,
         connector_rank=128, alpha=64, dropout=.05, weight_decay=0, warmup_ratio=.03,

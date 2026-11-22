@@ -1,10 +1,4 @@
-"""Trainer variants for the LoRASculpt+ optimizer ablation study.
-
-Both variants inherit SRR and CMR from the local LoRASculpt+ trainer while
-setting ORTHO_LAMBDA to zero. AB-manifold performs a post-step retraction;
-Muon replaces the optimizer with a real Muon/AdamW hybrid.
-"""
-
+"""Shared training behavior used by the OrbitStiefel trainer."""
 from __future__ import annotations
 
 import json
@@ -16,12 +10,8 @@ from pathlib import Path
 import torch
 from peft.tuners.lora import LoraLayer
 
-from llava.model.ab_manifold import lora_factor_residuals, retract_lora_model
-from llava.optim.muon_optimizer import MuonWithAdamW
 from llava.train.progress import update_run_progress
 from llava.train.LoRASculptPlus_Trainer import LoRASculptPlus
-from transformers.trainer import ALL_LAYERNORM_LAYERS, get_parameter_names, is_sagemaker_mp_enabled
-from transformers.trainer_utils import speed_metrics
 from transformers.utils import logging
 
 
@@ -51,7 +41,7 @@ class LoRASculptPlusOptimizerTrainer(LoRASculptPlus):
         super().__init__(*args, **kwargs)
         self._ab_last_stats = {}
         self._last_progress_write = 0.0
-        logger.info("Optimizer ablation: ORTHO_LAMBDA=0; optimizer=%s", self.optimizer_label)
+        logger.info("OrbitStiefel: ORTHO_LAMBDA=0; optimizer=%s", self.optimizer_label)
 
     def _is_llm_lora(self, name):
         return "lora_" in name and "mm_projector" not in name
@@ -112,106 +102,9 @@ class LoRASculptPlusOptimizerTrainer(LoRASculptPlus):
         update_run_progress(Path(progress_file), payload)
 
     def _post_optimizer_step(self, model):
-        """Default order for the Muon variant: optimizer then SRR."""
+        """Apply masks and write progress after an optimizer step."""
         self._apply_srr_masks(model)
         self._write_progress()
 
     def create_optimizer(self):
         raise NotImplementedError
-
-
-class ABManifoldLoRASculptPlus(LoRASculptPlusOptimizerTrainer):
-    optimizer_label = "AdamW + masked AB-manifold retraction"
-
-    def create_optimizer(self):
-        if is_sagemaker_mp_enabled():
-            return super().create_optimizer()
-        if self.optimizer is None:
-            decay_names = set(get_parameter_names(self.model, ALL_LAYERNORM_LAYERS))
-            decay_names = {name for name in decay_names if "bias" not in name}
-            projector = {name for name, _ in self.model.named_parameters() if "mm_projector" in name}
-            grouped = [
-                {
-                    "params": [p for n, p in self.model.named_parameters() if p.requires_grad and n not in projector and n in decay_names],
-                    "weight_decay": self.args.weight_decay,
-                    "lr": self.args.learning_rate,
-                },
-                {
-                    "params": [p for n, p in self.model.named_parameters() if p.requires_grad and n not in projector and n not in decay_names],
-                    "weight_decay": 0.0,
-                    "lr": self.args.learning_rate,
-                },
-                {
-                    "params": [p for n, p in self.model.named_parameters() if p.requires_grad and n in projector],
-                    "weight_decay": 0.0,
-                    "lr": self.args.mm_projector_lr,
-                },
-            ]
-            grouped = [group for group in grouped if group["params"]]
-            self.optimizer = torch.optim.AdamW(grouped, betas=(0.9, 0.999), eps=1e-8)
-            logger.info("Actual optimizer class: %s", self.optimizer.__class__.__name__)
-            print("Actual optimizer class: AdamW; AB-manifold retraction enabled; ORTHO_LAMBDA=0", flush=True)
-        return self.optimizer
-
-    def _post_optimizer_step(self, model):
-        stats = retract_lora_model(model)
-        self._ab_last_stats = stats
-        # SRR is deliberately applied after retraction. The residuals written
-        # after this call describe the masked factors used by the next batch.
-        self._apply_srr_masks(model)
-        stats.update(lora_factor_residuals(model))
-        self._write_progress(ab_stats=stats)
-        logger.info(
-            "AB_MANIFOLD step=%d residual_a=%.6g residual_b=%.6g masked_a=%.4f masked_b=%.4f",
-            self.state.global_step + 1,
-            stats.get("a_residual_after_mask", 0.0),
-            stats.get("b_residual_after_mask", 0.0),
-            stats.get("a_nonzero_ratio", 1.0),
-            stats.get("b_nonzero_ratio", 1.0),
-        )
-
-
-class MuonLoRASculptPlus(LoRASculptPlusOptimizerTrainer):
-    optimizer_label = "MuonWithAdamW"
-
-    def create_optimizer(self):
-        if is_sagemaker_mp_enabled():
-            return super().create_optimizer()
-        if self.optimizer is None:
-            llm_matrix = []
-            connector_matrix = []
-            vectors = []
-            for name, parameter in self.model.named_parameters():
-                if not parameter.requires_grad:
-                    continue
-                if parameter.ndim == 2 and "lora_" in name:
-                    (connector_matrix if "mm_projector" in name else llm_matrix).append(parameter)
-                else:
-                    vectors.append(parameter)
-            groups = []
-            if llm_matrix:
-                groups.append({"params": llm_matrix, "lr": self.args.learning_rate, "weight_decay": 0.0})
-            if connector_matrix:
-                groups.append({"params": connector_matrix, "lr": self.args.mm_projector_lr, "weight_decay": 0.0})
-            if vectors:
-                groups.append({"params": vectors, "lr": self.args.learning_rate, "weight_decay": 0.0})
-            self.optimizer = MuonWithAdamW(
-                groups,
-                lr=self.args.learning_rate,
-                momentum=0.95,
-                ns_steps=5,
-                nesterov=True,
-                betas=(0.9, 0.999),
-                eps=1e-8,
-                weight_decay=0.0,
-            )
-            logger.info(
-                "Actual optimizer class: %s; momentum=0.95 ns_steps=5 nesterov=True; llm_2d=%d connector_2d=%d vectors=%d",
-                self.optimizer.__class__.__name__, len(llm_matrix), len(connector_matrix), len(vectors),
-            )
-            print(
-                "Actual optimizer class: MuonWithAdamW; momentum=0.95 ns_steps=5 nesterov=True; "
-                "Newton-Schulz steps=5; ORTHO_LAMBDA=0",
-                flush=True,
-            )
-        return self.optimizer

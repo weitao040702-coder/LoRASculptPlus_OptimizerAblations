@@ -1,6 +1,6 @@
 # OrbitStiefel v1：新方案实现与实验入口
 
-本版本是新的研究实现，尚无 7B 正式训练成绩。旧 LoRASculpt+、ABManifold 源码及历史结果保留用于对照；新的入口为 `scripts/train_new_scheme.sh`。
+当前 OrbitStiefel 方法的训练入口为 `scripts/train_new_scheme.sh`；已完成的实验结果见 `README.md`。
 
 | 旧机制 | 新实现 |
 |---|---|

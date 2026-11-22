@@ -1,6 +1,6 @@
 # OrbitStiefel: preliminary multimodal LoRA experiments
 
-This repository contains a research extension of LoRASculpt for adapting LLaVA-v1.5-7B to IconQA while measuring retention on four visual question answering benchmarks. OrbitStiefel parameterizes LoRA directions using QR-orthogonalized sparse generators and trainable scales, protects approximate leading singular subspaces of the base model, and optionally sparsifies connector scales. See [NEW_SCHEME.md](NEW_SCHEME.md). This is a milestone, not a claim of a finished benchmark reproduction.
+This repository contains a research extension of LoRASculpt for adapting LLaVA-v1.5-7B to IconQA while measuring retention on four visual question answering benchmarks. OrbitStiefel parameterizes LoRA directions using QR-orthogonalized sparse generators and trainable scales, protects approximate leading singular subspaces of the base model, and optionally sparsifies connector scales. This is a milestone, not a claim of a finished benchmark reproduction.
 
 ## Preliminary results
 
@@ -15,7 +15,7 @@ The table reports accuracy (%) on four upstream benchmarks after IconQA fine-tun
 | 64 | Local baseline | 57.51 | **63.15** | 61.11 | **57.36** | 59.78 |
 | 64 | OrbitStiefel | **58.18** | 62.95 | **61.69** | 57.08 | **59.97** |
 
-OrbitStiefel has a higher source mean than the local baseline at ranks 32 and 64, and a lower mean at rank 16. GQA improves over the baseline at all three ranks, while OCRVQA and TextVQA are lower for OrbitStiefel. These are preliminary single-seed results; the small differences do not establish statistical significance. Training and evaluation use the same locally reconstructed data across the main comparison, but execution configurations differ. IconQA target accuracy has not been evaluated. The OCRVQA sample is a reproducible local 2,000-question reconstruction, not the original authors' undisclosed sample. Earlier ABManifold/Muon results in `results.md` use a different protocol and should not be compared directly.
+OrbitStiefel has a higher source mean than the local baseline at ranks 32 and 64, and a lower mean at rank 16. GQA improves over the baseline at all three ranks, while OCRVQA and TextVQA are lower for OrbitStiefel. These are preliminary single-seed results; the small differences do not establish statistical significance. Training and evaluation use the same locally reconstructed data across the main comparison, but execution configurations differ. IconQA target accuracy has not been evaluated. The OCRVQA sample is a reproducible local 2,000-question reconstruction, not the original authors' undisclosed sample.
 
 The underlying scores and unrounded means are in `milestone_results/`; reproduce their existing summary with `python3 scripts/milestone_results.py` (less than a second). Means are displayed as recorded, so rounding may differ by 0.01 when calculated from displayed scores.
 

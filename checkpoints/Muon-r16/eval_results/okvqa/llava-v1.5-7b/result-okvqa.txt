@@ -1,2 +1,0 @@
-Samples: 5046
-Accuracy: 48.99%

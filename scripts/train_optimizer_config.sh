@@ -15,8 +15,6 @@ SAVE_STEPS_DEFAULT=10000
 case "$OPTAB_METHOD" in
   orbit_stiefel) TRAINER_NAME=OrbitStiefelLoRASculptPlus; TRAIN_MODULE=llava.train.train; SAVE_STEPS_DEFAULT=10000
     TRAIN_JSON="${OPTAB_TRAIN_JSON:-$ROOT/assets/data/iconqa/iconqa_txt-train-10000-seed42-paper.json}" ;;
-  ab_manifold) TRAINER_NAME=ABManifoldLoRASculptPlus ;;
-  muon) TRAINER_NAME=MuonLoRASculptPlus ;;
   *) echo "Unsupported OPTAB_METHOD=$OPTAB_METHOD" >&2; exit 2 ;;
 esac
 

@@ -46,7 +46,7 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
     if use_flash_attn:
         kwargs['attn_implementation'] = 'flash_attention_2'
 
-    # Optimizer-ablation checkpoints are named ABManifold-rXX/Muon-rXX,
+    # Adapter checkpoints can have method and rank names,
     # rather than containing "llava" or "lora".  Their checkpoint files
     # still unambiguously identify them as LLaVA adapter checkpoints.
     has_lora_adapter = model_base is not None and (
@@ -186,7 +186,7 @@ def load_pretrained_model(model_path, model_base, model_name, load_8bit=False, l
 
     image_processor = None
 
-    # Adapter checkpoints can be named by method/rank (e.g. ABManifold-r16)
+    # Adapter checkpoints can be named by method and rank
     # rather than containing "llava"; initialize their vision tower too.
     if is_llava_checkpoint:
         mm_use_im_start_end = getattr(model.config, "mm_use_im_start_end", False)

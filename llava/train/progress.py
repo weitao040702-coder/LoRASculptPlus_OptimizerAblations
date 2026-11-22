@@ -1,4 +1,4 @@
-"""Atomic per-run and aggregate progress files for optimizer ablations."""
+"""Atomic per-run and aggregate progress files for training runs."""
 
 from __future__ import annotations
 
@@ -39,8 +39,7 @@ def _state_files(progress_dir: Path, current: Path):
 
 def render_progress(progress_dir: Path, allocation_job_id: str = "", node: str = "") -> dict:
     states = list(_state_files(progress_dir, progress_dir / "__current__.json"))
-    order = {"ABManifold": 0, "Muon": 1, "ab_manifold": 0, "muon": 1}
-    states.sort(key=lambda item: (order.get(str(item.get("method")), 9), int(item.get("rank", 0))))
+    states.sort(key=lambda item: (str(item.get("method", "")), int(item.get("rank", 0))))
     aggregate = {
         "updated_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
         "allocation_job_id": allocation_job_id or os.environ.get("OPTAB_ALLOCATION_JOB", ""),
@@ -55,7 +54,7 @@ def render_progress(progress_dir: Path, allocation_job_id: str = "", node: str =
         "OKVQA", "OCRVQA", "GQA", "TextVQA", "Status", "Step", "Last Update",
     ]
     lines = [
-        "# Optimizer Ablation Progress",
+        "# Training Progress",
         "",
         f"Updated: {aggregate['updated_at']}    Allocation: {aggregate['allocation_job_id'] or 'unknown'}    Node: {aggregate['node'] or 'unknown'}",
         "",

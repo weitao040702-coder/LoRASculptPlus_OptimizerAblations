@@ -48,8 +48,6 @@ local_rank = None
 
 LORASCULPT_PLUS_TRAINERS = {
     "LoRASculptPlus",
-    "ABManifoldLoRASculptPlus",
-    "MuonLoRASculptPlus",
     "OrbitStiefelLoRASculptPlus",
 }
 

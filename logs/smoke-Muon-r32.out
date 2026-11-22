@@ -1,88 +1,0 @@
-SMOKE_START method=muon rank=32 gpu=0 host=gpu-a100-04.deac.wfu.edu
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-[2026-10-07 04:21:54,347] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-You are using a model of type llava to instantiate a model of type llava_llama. This is not supported for all configurations of models and can yield errors.
-You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  return self.fget.__get__(instance, owner)()
-Loading checkpoint shards:  50%|█████     | 1/2 [00:08<00:08,  8.50s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:11<00:00,  5.46s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:11<00:00,  5.92s/it]
-Adding LoRA adapters...
-LoRASculpt+ mixed-rank adapters: LLM rank=32, connector rank=128
-Formatting inputs...Skip in lazy mode
-Actual optimizer class: MuonWithAdamW; momentum=0.95 ns_steps=5 nesterov=True; Newton-Schulz steps=5; ORTHO_LAMBDA=0
-  0%|          | 0/2 [00:00<?, ?it/s]The input hidden states seems to be silently casted in float32, this might be related to the fact you have upcasted embedding or layer norm layers in float32. We will cast back the input in torch.bfloat16.
- 50%|█████     | 1/2 [00:15<00:15, 15.58s/it]                                              50%|█████     | 1/2 [00:15<00:15, 15.58s/it]100%|██████████| 2/2 [00:30<00:00, 14.91s/it]                                             100%|██████████| 2/2 [00:30<00:00, 14.91s/it]                                             100%|██████████| 2/2 [00:32<00:00, 14.91s/it]100%|██████████| 2/2 [00:32<00:00, 16.08s/it]
-Some non-default generation parameters are set in the model config. These should go into a GenerationConfig file (https://huggingface.co/docs/transformers/generation_strategies#save-a-custom-decoding-strategy-with-your-model) instead. This warning will be raised to an exception in v4.41.
-Non-default generation parameters: {'max_length': 4096}
-{'loss': 2.6512, 'learning_rate': 0.0002, 'epoch': 0.0}
-{'loss': 2.1942, 'learning_rate': 0.0, 'epoch': 0.0}
-{'train_runtime': 32.1581, 'train_samples_per_second': 0.995, 'train_steps_per_second': 0.062, 'train_loss': 2.422685384750366, 'epoch': 0.0}
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-[2026-10-07 04:24:12,682] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-SMOKE_COMPLETE method=muon
-SMOKE_START method=muon rank=32 gpu=0 host=gpu-a100-01.deac.wfu.edu
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-[2026-10-07 05:03:03,994] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-You are using a model of type llava to instantiate a model of type llava_llama. This is not supported for all configurations of models and can yield errors.
-You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  return self.fget.__get__(instance, owner)()
-Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.39s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.44s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.58s/it]
-Adding LoRA adapters...
-LoRASculpt+ mixed-rank adapters: LLM rank=32, connector rank=128
-Formatting inputs...Skip in lazy mode
-Actual optimizer class: MuonWithAdamW; momentum=0.95 ns_steps=5 nesterov=True; Newton-Schulz steps=5; ORTHO_LAMBDA=0
-  0%|          | 0/2 [00:00<?, ?it/s]The input hidden states seems to be silently casted in float32, this might be related to the fact you have upcasted embedding or layer norm layers in float32. We will cast back the input in torch.bfloat16.
-3it [00:09,  3.09s/it]                                     3it [00:09,  3.09s/it]                      3it [00:09,  3.09s/it]3it [00:09,  3.12s/it]
-Some non-default generation parameters are set in the model config. These should go into a GenerationConfig file (https://huggingface.co/docs/transformers/generation_strategies#save-a-custom-decoding-strategy-with-your-model) instead. This warning will be raised to an exception in v4.41.
-Non-default generation parameters: {'max_length': 4096}
-{'loss': 1.289, 'learning_rate': 0.0002, 'epoch': 0.0}
-{'train_runtime': 9.3507, 'train_samples_per_second': 3.422, 'train_steps_per_second': 0.214, 'train_loss': 0.4296579758326213, 'epoch': 0.0}
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-[2026-10-07 05:04:20,906] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-SMOKE_COMPLETE method=muon
-SMOKE_START method=muon rank=32 gpu=0 host=gpu-a100-01.deac.wfu.edu
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-[2026-10-07 05:12:09,646] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-You are using a model of type llava to instantiate a model of type llava_llama. This is not supported for all configurations of models and can yield errors.
-You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  return self.fget.__get__(instance, owner)()
-Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.41s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.13s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:04<00:00,  2.32s/it]
-Adding LoRA adapters...
-LoRASculpt+ mixed-rank adapters: LLM rank=32, connector rank=128
-Formatting inputs...Skip in lazy mode
-Actual optimizer class: MuonWithAdamW; momentum=0.95 ns_steps=5 nesterov=True; Newton-Schulz steps=5; ORTHO_LAMBDA=0
-  0%|          | 0/2 [00:00<?, ?it/s]The input hidden states seems to be silently casted in float32, this might be related to the fact you have upcasted embedding or layer norm layers in float32. We will cast back the input in torch.bfloat16.
-3it [00:08,  3.00s/it]                                     3it [00:08,  3.00s/it]                      3it [00:09,  3.00s/it]3it [00:09,  3.03s/it]
-Some non-default generation parameters are set in the model config. These should go into a GenerationConfig file (https://huggingface.co/docs/transformers/generation_strategies#save-a-custom-decoding-strategy-with-your-model) instead. This warning will be raised to an exception in v4.41.
-Non-default generation parameters: {'max_length': 4096}
-{'loss': 1.289, 'learning_rate': 0.0002, 'epoch': 0.0}
-{'train_runtime': 9.0943, 'train_samples_per_second': 3.519, 'train_steps_per_second': 0.22, 'train_loss': 0.4296579758326213, 'epoch': 0.0}
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-[2026-10-07 05:13:30,867] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-SMOKE_COMPLETE method=muon

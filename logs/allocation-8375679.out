@@ -1,180 +1,0 @@
-WAIT_START allocation=8375679 time=2026-10-07T05:00:54-04:00 host=gpu-a100-01.deac.wfu.edu
-SLURM_CONTROLLER_AVAILABLE time=2026-10-07T05:00:54-04:00
-JobId=8375679 JobName=qianr-optab-a1003 UserId=qianr(128951) GroupId=qianr(128951) MCS_label=N/A Priority=182 Nice=0 Account=yanggrp QOS=normal WCKey=* JobState=RUNNING Reason=None Dependency=(null) Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:02 TimeLimit=12:00:00 TimeMin=N/A SubmitTime=2026-10-07T05:00:47 EligibleTime=2026-10-07T05:00:47 AccrueTime=Unknown StartTime=2026-10-07T05:00:52 EndTime=2026-10-07T17:00:53 Deadline=N/A PreemptEligibleTime=2026-10-07T05:00:52 PreemptTime=None SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-07T05:00:52 Scheduler=Backfill Partition=gpu AllocNode:Sid=research-02.deac.wfu.edu:3851551 ReqNodeList=(null) ExcNodeList=(null) NodeList=gpu-a100-01 BatchHost=gpu-a100-01 NumNodes=1 NumCPUs=8 NumTasks=1 CPUs/Task=8 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=8,mem=32G,node=1,billing=4227,gres/gpu=3,gres/gpu:a100_80=3 AllocTRES=cpu=8,mem=32G,node=1,billing=4227,gres/gpu=3,gres/gpu:a100_80=3 Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=8 MinMemoryNode=32G MinTmpDiskNode=0 Features=(null) DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=(null) WorkDir=/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations StdErr=/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/logs/optab-hold-8375679.err StdIn=/dev/null StdOut=/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/logs/optab-hold-8375679.out Switches=1@00:05:00 TresPerNode=gres/gpu:A100_80:3 TresPerTask=cpu=8 
-REQUEST_ALLOCATION_EXTENSION allocation=8375679 time_limit=3-00:00:00
-Access/permission denied for job 8375679
-ALLOCATION_EXTENSION_FAILED allocation=8375679
-ALLOCATION_WINDOW_OK allocation=8375679 remaining_seconds=43199 end=2026-10-07T17:00:53
-LAUNCH_EXPERIMENT allocation=8375679 time=2026-10-07T05:00:54-04:00
-LoRASculpt environment ready: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda
-Python: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/bin/python
-JobId=8375679 JobName=qianr-optab-a1003 UserId=qianr(128951) GroupId=qianr(128951) MCS_label=N/A Priority=182 Nice=0 Account=yanggrp QOS=normal WCKey=* JobState=RUNNING Reason=None Dependency=(null) Requeue=1 Restarts=0 BatchFlag=1 Reboot=0 ExitCode=0:0 RunTime=00:00:02 TimeLimit=12:00:00 TimeMin=N/A SubmitTime=2026-10-07T05:00:47 EligibleTime=2026-10-07T05:00:47 AccrueTime=Unknown StartTime=2026-10-07T05:00:52 EndTime=2026-10-07T17:00:53 Deadline=N/A PreemptEligibleTime=2026-10-07T05:00:52 PreemptTime=None SuspendTime=None SecsPreSuspend=0 LastSchedEval=2026-10-07T05:00:52 Scheduler=Backfill Partition=gpu AllocNode:Sid=research-02.deac.wfu.edu:3851551 ReqNodeList=(null) ExcNodeList=(null) NodeList=gpu-a100-01 BatchHost=gpu-a100-01 NumNodes=1 NumCPUs=8 NumTasks=1 CPUs/Task=8 ReqB:S:C:T=0:0:*:* ReqTRES=cpu=8,mem=32G,node=1,billing=4227,gres/gpu=3,gres/gpu:a100_80=3 AllocTRES=cpu=8,mem=32G,node=1,billing=4227,gres/gpu=3,gres/gpu:a100_80=3 Socks/Node=* NtasksPerN:B:S:C=0:0:*:* CoreSpec=* MinCPUsNode=8 MinMemoryNode=32G MinTmpDiskNode=0 Features=(null) DelayBoot=00:00:00 OverSubscribe=OK Contiguous=0 Licenses=(null) LicensesAlloc=(null) Network=(null) Command=(null) WorkDir=/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations StdErr=/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/logs/optab-hold-8375679.err StdIn=/dev/null StdOut=/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/logs/optab-hold-8375679.out Switches=1@00:05:00 TresPerNode=gres/gpu:A100_80:3 TresPerTask=cpu=8 
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-[2026-10-07 05:01:07,345] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-SMOKE_SUBMIT method=ab_manifold slot=0
-#########################BEGIN-PROLOG#########################
-JobName   = qianr-optab-a1003
-Account   = yanggrp
-NodeList  = gpu-a100-01
-Resources = cpu=8,mem=32G,node=1,billing=4227,gres/gpu=3,gres/gpu:a100_80=3
-WorkDir   = /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations
-###########################END-PROLOG#########################
-LoRASculpt environment ready: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda
-Python: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/bin/python
-LoRASculpt environment ready: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda
-Python: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/bin/python
-SMOKE_START method=ab_manifold rank=32 gpu=0 host=gpu-a100-01.deac.wfu.edu
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-[2026-10-07 05:01:21,056] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-You are using a model of type llava to instantiate a model of type llava_llama. This is not supported for all configurations of models and can yield errors.
-You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  return self.fget.__get__(instance, owner)()
-Loading checkpoint shards:  50%|█████     | 1/2 [00:10<00:10, 10.15s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:13<00:00,  6.27s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:13<00:00,  6.85s/it]
-Adding LoRA adapters...
-LoRASculpt+ mixed-rank adapters: LLM rank=32, connector rank=128
-Formatting inputs...Skip in lazy mode
-Actual optimizer class: AdamW; AB-manifold retraction enabled; ORTHO_LAMBDA=0
-  0%|          | 0/2 [00:00<?, ?it/s]The input hidden states seems to be silently casted in float32, this might be related to the fact you have upcasted embedding or layer norm layers in float32. We will cast back the input in torch.bfloat16.
-3it [00:10,  3.45s/it]                                     3it [00:10,  3.45s/it]                      3it [00:10,  3.45s/it]3it [00:10,  3.48s/it]
-Some non-default generation parameters are set in the model config. These should go into a GenerationConfig file (https://huggingface.co/docs/transformers/generation_strategies#save-a-custom-decoding-strategy-with-your-model) instead. This warning will be raised to an exception in v4.41.
-Non-default generation parameters: {'max_length': 4096}
-{'loss': 0.8398, 'learning_rate': 0.0002, 'epoch': 0.0}
-{'train_runtime': 10.4539, 'train_samples_per_second': 3.061, 'train_steps_per_second': 0.191, 'train_loss': 0.27992693583170575, 'epoch': 0.0}
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-[2026-10-07 05:02:54,367] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-SMOKE_COMPLETE method=ab_manifold
-SMOKE_SUBMIT method=muon slot=0
-#########################BEGIN-PROLOG#########################
-JobName   = qianr-optab-a1003
-Account   = yanggrp
-NodeList  = gpu-a100-01
-Resources = cpu=8,mem=32G,node=1,billing=4227,gres/gpu=3,gres/gpu:a100_80=3
-WorkDir   = /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations
-###########################END-PROLOG#########################
-LoRASculpt environment ready: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda
-Python: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/bin/python
-LoRASculpt environment ready: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda
-Python: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/bin/python
-SMOKE_START method=muon rank=32 gpu=0 host=gpu-a100-01.deac.wfu.edu
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-[2026-10-07 05:03:03,994] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-You are using a model of type llava to instantiate a model of type llava_llama. This is not supported for all configurations of models and can yield errors.
-You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  return self.fget.__get__(instance, owner)()
-Loading checkpoint shards:  50%|█████     | 1/2 [00:03<00:03,  3.39s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.44s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:05<00:00,  2.58s/it]
-Adding LoRA adapters...
-LoRASculpt+ mixed-rank adapters: LLM rank=32, connector rank=128
-Formatting inputs...Skip in lazy mode
-Actual optimizer class: MuonWithAdamW; momentum=0.95 ns_steps=5 nesterov=True; Newton-Schulz steps=5; ORTHO_LAMBDA=0
-  0%|          | 0/2 [00:00<?, ?it/s]The input hidden states seems to be silently casted in float32, this might be related to the fact you have upcasted embedding or layer norm layers in float32. We will cast back the input in torch.bfloat16.
-3it [00:09,  3.09s/it]                                     3it [00:09,  3.09s/it]                      3it [00:09,  3.09s/it]3it [00:09,  3.12s/it]
-Some non-default generation parameters are set in the model config. These should go into a GenerationConfig file (https://huggingface.co/docs/transformers/generation_strategies#save-a-custom-decoding-strategy-with-your-model) instead. This warning will be raised to an exception in v4.41.
-Non-default generation parameters: {'max_length': 4096}
-{'loss': 1.289, 'learning_rate': 0.0002, 'epoch': 0.0}
-{'train_runtime': 9.3507, 'train_samples_per_second': 3.422, 'train_steps_per_second': 0.214, 'train_loss': 0.4296579758326213, 'epoch': 0.0}
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-[2026-10-07 05:04:20,906] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-SMOKE_COMPLETE method=muon
-TRAIN_SUBMIT method=ab_manifold ranks=16,32,64
-#########################BEGIN-PROLOG#########################
-JobName   = qianr-optab-a1003
-Account   = yanggrp
-NodeList  = gpu-a100-01
-Resources = cpu=8,mem=32G,node=1,billing=4227,gres/gpu=3,gres/gpu:a100_80=3
-WorkDir   = /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations
-###########################END-PROLOG#########################
-LoRASculpt environment ready: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda
-Python: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/bin/python
-PARALLEL_TRAIN_START method=ABManifold gpu_count=3 cuda_visible=0,1,2 host=gpu-a100-01.deac.wfu.edu
-LoRASculpt environment ready: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda
-Python: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/bin/python
-LoRASculpt environment ready: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda
-Python: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/bin/python
-LoRASculpt environment ready: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda
-Python: /deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/bin/python
-START method=ab_manifold rank=16 gpu=0 host=gpu-a100-01.deac.wfu.edu
-ORTHO_LAMBDA=0
-CUDA_VISIBLE_DEVICES=0
-TRAINING_START epoch=1791363866
-START method=ab_manifold rank=64 gpu=2 host=gpu-a100-01.deac.wfu.edu
-ORTHO_LAMBDA=0
-CUDA_VISIBLE_DEVICES=2
-START method=ab_manifold rank=32 gpu=1 host=gpu-a100-01.deac.wfu.edu
-ORTHO_LAMBDA=0
-CUDA_VISIBLE_DEVICES=1
-TRAINING_START epoch=1791363866
-TRAINING_START epoch=1791363866
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-[2026-10-07 05:04:32,488] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-[2026-10-07 05:04:32,533] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-[2026-10-07 05:04:32,562] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-You are using a model of type llava to instantiate a model of type llava_llama. This is not supported for all configurations of models and can yield errors.
-You are using a model of type llava to instantiate a model of type llava_llama. This is not supported for all configurations of models and can yield errors.
-You are using a model of type llava to instantiate a model of type llava_llama. This is not supported for all configurations of models and can yield errors.
-You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
-You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
-You are attempting to use Flash Attention 2.0 with a model not initialized on GPU. Make sure to move the model to GPU after initializing it on CPU with `model.to('cuda')`.
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
-  warnings.warn(
-Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  return self.fget.__get__(instance, owner)()
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  return self.fget.__get__(instance, owner)()
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/_utils.py:831: UserWarning: TypedStorage is deprecated. It will be removed in the future and UntypedStorage will be the only storage class. This should only matter to you if you are using storages directly.  To access UntypedStorage directly, use tensor.untyped_storage() instead of tensor.storage()
-  return self.fget.__get__(instance, owner)()
-Loading checkpoint shards:  50%|█████     | 1/2 [00:12<00:12, 12.40s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:12<00:12, 12.42s/it]Loading checkpoint shards:  50%|█████     | 1/2 [00:12<00:12, 12.41s/it]scripts/train_optimizer_config.sh: line 69: 1181356 Killed                  python -m llava.train.train_mem --lora_enable True --lora_r "$OPTAB_RANK" --lora_alpha 64 --connector_lora_r 128 --connector_lora_alpha 64 --mm_projector_lr 2e-5 --model_name_or_path "$ROOT/assets/models/llava-v1.5-7b" --version v1 --data_path "$TRAIN_JSON" --image_folder "$DATA_ROOT" --vision_tower "$ROOT/assets/models/clip-vit-large-patch14-336" --mm_projector_type mlp2x_gelu --mm_vision_select_layer -2 --mm_use_im_start_end False --mm_use_im_patch_token False --image_aspect_ratio pad --group_by_modality_length True --bf16 True --output_dir "$OPTAB_OUTPUT" --overwrite_output_dir True --num_train_epochs 3 --per_device_train_batch_size 1 --per_device_eval_batch_size 1 --gradient_accumulation_steps 16 --evaluation_strategy no --save_strategy steps --save_steps 10000 --save_total_limit 15 --learning_rate 2e-4 --weight_decay 0.0 --warmup_ratio 0.03 --lr_scheduler_type cosine --logging_steps 1 --tf32 True --model_max_length 2048 --gradient_checkpointing True --dataloader_num_workers 4 --lazy_preprocess True --report_to none --seed 42 --data_seed 42 --trainer_name "$TRAINER_NAME" "${EXTRA_TRAIN_ARGS[@]}"
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/torch/cuda/__init__.py:51: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
-  import pynvml  # type: ignore[import]
-Loading checkpoint shards: 100%|██████████| 2/2 [00:18<00:00,  8.79s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:18<00:00,  8.79s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:18<00:00,  9.33s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:18<00:00,  9.33s/it]
-
-/deac/csc/yangGrp/qianr/qiushi/mwt/LoRASculptPlus_OptimizerAblations/.conda/lib/python3.10/site-packages/transformers/utils/hub.py:124: FutureWarning: Using `TRANSFORMERS_CACHE` is deprecated and will be removed in v5 of Transformers. Use `HF_HOME` instead.
-  warnings.warn(
-[2026-10-07 05:05:02,159] [INFO] [real_accelerator.py:161:get_accelerator] Setting ds_accelerator to cuda (auto detect)
-Adding LoRA adapters...
-LoRASculpt+ mixed-rank adapters: LLM rank=32, connector rank=128
-Formatting inputs...Skip in lazy mode
-Actual optimizer class: AdamW; AB-manifold retraction enabled; ORTHO_LAMBDA=0
-Adding LoRA adapters...
-LoRASculpt+ mixed-rank adapters: LLM rank=16, connector rank=128
-Formatting inputs...Skip in lazy mode
-Actual optimizer class: AdamW; AB-manifold retraction enabled; ORTHO_LAMBDA=0
-  0%|          | 0/1875 [00:00<?, ?it/s]  0%|          | 0/1875 [00:00<?, ?it/s]The input hidden states seems to be silently casted in float32, this might be related to the fact you have upcasted embedding or layer norm layers in float32. We will cast back the input in torch.bfloat16.
-The input hidden states seems to be silently casted in float32, this might be related to the fact you have upcasted embedding or layer norm layers in float32. We will cast back the input in torch.bfloat16.
-  0%|          | 1/1875 [00:10<5:32:28, 10.65s/it]                                                    0%|          | 1/1875 [00:10<5:32:28, 10.65s/it]  0%|          | 1/1875 [00:10<5:33:29, 10.68s/it]                                                    0%|          | 1/1875 [00:10<5:33:29, 10.68s/it]  0%|          | 2/1875 [00:19<4:50:22,  9.30s/it]                                                    0%|          | 2/1875 [00:19<4:50:22,  9.30s/it]  0%|          | 2/1875 [00:19<4:53:51,  9.41s/it]                                                    0%|          | 2/1875 [00:19<4:53:51,  9.41s/it]  0%|          | 3/1875 [00:27<4:39:28,  8.96s/it]                                                    0%|          | 3/1875 [00:27<4:39:28,  8.96s/it]  0%|          | 3/1875 [00:27<4:44:50,  9.13s/it]                                                    0%|          | 3/1875 [00:27<4:44:50,  9.13s/it]  0%|          | 4/1875 [00:35<4:32:08,  8.73s/it]                                                    0%|          | 4/1875 [00:35<4:32:08,  8.73s/it]  0%|          | 4/1875 [00:36<4:37:17,  8.89s/it]                                                    0%|          | 4/1875 [00:36<4:37:17,  8.89s/it]  0%|          | 5/1875 [00:44<4:28:33,  8.62s/it]                                                    0%|          | 5/1875 [00:44<4:28:33,  8.62s/it]  0%|          | 5/1875 [00:45<4:33:26,  8.77s/it]                                                    0%|          | 5/1875 [00:45<4:33:26,  8.77s/it]  0%|          | 6/1875 [00:52<4:27:16,  8.58s/it]                                                    0%|          | 6/1875 [00:52<4:27:16,  8.58s/it]  0%|          | 6/1875 [00:53<4:32:01,  8.73s/it]                                                    0%|          | 6/1875 [00:53<4:32:01,  8.73s/it]  0%|          | 7/1875 [01:01<4:25:55,  8.54s/it]                                                    0%|          | 7/1875 [01:01<4:25:55,  8.54s/it]  0%|          | 7/1875 [01:02<4:30:46,  8.70s/it]                                                    0%|          | 7/1875 [01:02<4:30:46,  8.70s/it]  0%|          | 8/1875 [01:09<4:25:41,  8.54s/it]                                                    0%|          | 8/1875 [01:09<4:25:41,  8.54s/it]  0%|          | 8/1875 [01:11<4:31:31,  8.73s/it]                                                    0%|          | 8/1875 [01:11<4:31:31,  8.73s/it]  0%|          | 9/1875 [01:18<4:25:47,  8.55s/it]                                                    0%|          | 9/1875 [01:18<4:25:47,  8.55s/it]  0%|          | 9/1875 [01:19<4:31:00,  8.71s/it]                                                    0%|          | 9/1875 [01:19<4:31:00,  8.71s/it]  1%|          | 10/1875 [01:26<4:24:12,  8.50s/it]                                                     1%|          | 10/1875 [01:26<4:24:12,  8.50s/it]  1%|          | 10/1875 [01:28<4:29:42,  8.68s/it]                                                     1%|          | 10/1875 [01:28<4:29:42,  8.68s/it]  1%|          | 11/1875 [01:35<4:24:10,  8.50s/it]                                                     1%|          | 11/1875 [01:35<4:24:10,  8.50s/it]  1%|          | 11/1875 [01:37<4:29:58,  8.69s/it]                                                     1%|          | 11/1875 [01:37<4:29:58,  8.69s/it]  1%|          | 12/1875 [01:43<4:22:45,  8.46s/it]                                                     1%|          | 12/1875 [01:43<4:22:45,  8.46s/it]  1%|          | 12/1875 [01:45<4:28:55,  8.66s/it]                                                     1%|          | 12/1875 [01:45<4:28:55,  8.66s/it]  1%|          | 13/1875 [01:52<4:23:15,  8.48s/it]                                                     1%|          | 13/1875 [01:52<4:23:15,  8.48s/it]  1%|          | 13/1875 [01:54<4:29:21,  8.68s/it]                                                     1%|          | 13/1875 [01:54<4:29:21,  8.68s/it]  1%|          | 14/1875 [02:00<4:24:12,  8.52s/it]                                                     1%|          | 14/1875 [02:00<4:24:12,  8.52s/it]  1%|          | 14/1875 [02:03<4:30:19,  8.72s/it]                                                     1%|          | 14/1875 [02:03<4:30:19,  8.72s/it]  1%|          | 15/1875 [02:09<4:24:41,  8.54s/it]                                                     1%|          | 15/1875 [02:09<4:24:41,  8.54s/it]  1%|          | 15/1875 [02:12<4:30:30,  8.73s/it]                                                     1%|          | 15/1875 [02:12<4:30:30,  8.73s/it]  1%|          | 16/1875 [02:17<4:23:18,  8.50s/it]                                                     1%|          | 16/1875 [02:17<4:23:18,  8.50s/it]  1%|          | 16/1875 [02:20<4:29:55,  8.71s/it]                                                     1%|          | 16/1875 [02:20<4:29:55,  8.71s/it]  1%|          | 17/1875 [02:26<4:23:47,  8.52s/it]                                                     1%|          | 17/1875 [02:26<4:23:47,  8.52s/it]  1%|          | 17/1875 [02:29<4:29:21,  8.70s/it]                                                     1%|          | 17/1875 [02:29<4:29:21,  8.70s/it]  1%|          | 18/1875 [02:34<4:22:57,  8.50s/it]                                                     1%|          | 18/1875 [02:34<4:22:57,  8.50s/it]  1%|          | 18/1875 [02:38<4:28:49,  8.69s/it]                                                     1%|          | 18/1875 [02:38<4:28:49,  8.69s/it]  1%|          | 19/1875 [02:43<4:22:33,  8.49s/it]                                                     1%|          | 19/1875 [02:43<4:22:33,  8.49s/it]  1%|          | 19/1875 [02:46<4:30:52,  8.76s/it]                                                     1%|          | 19/1875 [02:46<4:30:52,  8.76s/it]  1%|          | 20/1875 [02:51<4:23:47,  8.53s/it]                                                     1%|          | 20/1875 [02:51<4:23:47,  8.53s/it]  1%|          | 20/1875 [02:55<4:30:15,  8.74s/it]                                                     1%|          | 20/1875 [02:55<4:30:15,  8.74s/it]  1%|          | 21/1875 [03:00<4:22:56,  8.51s/it]                                                     1%|          | 21/1875 [03:00<4:22:56,  8.51s/it]  1%|          | 21/1875 [03:04<4:29:15,  8.71s/it]                                                     1%|          | 21/1875 [03:04<4:29:15,  8.71s/it]  1%|          | 22/1875 [03:08<4:23:11,  8.52s/it]                                                     1%|          | 22/1875 [03:08<4:23:11,  8.52s/it]  1%|          | 22/1875 [03:13<4:30:15,  8.75s/it]                                                     1%|          | 22/1875 [03:13<4:30:15,  8.75s/it]  1%|          | 23/1875 [03:17<4:24:01,  8.55s/it]                                                     1%|          | 23/1875 [03:17<4:24:01,  8.55s/it]  1%|          | 23/1875 [03:21<4:29:38,  8.74s/it]                                                     1%|          | 23/1875 [03:21<4:29:38,  8.74s/it]srun: Job step aborted: Waiting up to 32 seconds for job step to finish.
-[2026-10-07T05:09:34.143] error: *** STEP 8375679.3 ON gpu-a100-01 CANCELLED AT 2026-10-07T05:09:34 DUE to SIGNAL Terminated ***

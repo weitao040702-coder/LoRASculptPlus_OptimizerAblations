@@ -9,10 +9,10 @@ tags:
   - lora
   - manifold-optimization
   - research-artifacts
-pretty_name: LoRASculptPlus Optimizer Ablations Research Assets
+pretty_name: LoRASculptPlus Research Assets
 ---
 
-# LoRASculptPlus Optimizer Ablations — Research Assets
+# LoRASculptPlus — Research Assets
 
 本仓库保存多模态低秩适配实验的文件资产。它是研究项目资产仓库，**不是一个新标注的数据集，也不是原论文官方仓库**。
 
@@ -34,8 +34,6 @@ https://github.com/weitao040702-coder/LoRASculptPlus_OptimizerAblations
 | `assets/data/upstream/` | 原服务器保留的上游数据准备／下载资产 |
 | `assets/models/llava-v1.5-7b/` | 原本地 LLaVA-v1.5-7B backbone 文件 |
 | `assets/models/clip-vit-large-patch14-336/` | CLIP vision encoder 文件 |
-| `checkpoints/ABManifold-r16,r32,r64/` | masked AB-manifold 实验的 adapter、配置与评测文件 |
-| `checkpoints/Muon-r16,r32,r64/` | 独立 optimizer 消融实验文件 |
 | `checkpoints/smoke-*/` | 小规模调试／保存测试产生的文件，非正式结果 |
 | `asset_inventory.json` | 计划上传文件的相对路径与字节大小 |
 
